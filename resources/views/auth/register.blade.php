@@ -36,7 +36,7 @@
         }
 
         .auth-container {
-            max-width: 400px;
+            max-width:500px;
             margin: 0 auto;
             width: 100%;
         }
@@ -179,11 +179,11 @@
                         <div class="divider" role="separator">- OU -</div>
 
                         <nav class="social-auth">
-                            <a href="#" class="social-button" role="button">
+                            <a href="{{ route('google.login') }}" class="social-button" role="button">
                                 <img src="https://cdn.cdnlogo.com/logos/g/35/google-icon.svg" width="20" height="20" alt="Ícone do Google">
                                 <span>Registrar com Google</span>
                             </a>
-                            <a href="#" class="social-button" role="button">
+                            <a href="{{ route('github.login') }}" class="social-button" role="button">
                                 <img src="https://cdn.cdnlogo.com/logos/g/69/github-icon.svg" width="20" height="20" alt="Ícone do GitHub">
                                 <span>Registrar com GitHub</span>
                             </a>
