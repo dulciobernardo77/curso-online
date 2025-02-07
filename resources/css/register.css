@@ -1,0 +1,93 @@
+.login-container {
+            min-height: 100vh;
+            background-color: #fff;
+        }
+
+        .brand-section {
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .brand-section img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .form-section {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-title {
+            color: #1a73e8;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .form-control {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-login {
+            background-color: #1a73e8;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .forgot-password {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-align: right;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .separator {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #666;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        .register-link a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
