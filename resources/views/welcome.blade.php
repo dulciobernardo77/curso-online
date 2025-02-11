@@ -33,7 +33,7 @@
 
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
-                        url('/images/hero-bg.jpg') no-repeat center center;
+                        url('/images/backgroung-pattern-3.png') no-repeat center center;
             background-size: cover;
             height: 100vh;
             padding: 120px 0;
