@@ -110,9 +110,8 @@
         .accordion-button::after {
             filter: invert(1);
         }
-
-        footer a:hover {
-            color: var(--primary-color) !important;
+        footer{
+            backgroundColorrgba(255, 255, 255, 0.05);
         }
 
         .input-group .form-control:focus {
@@ -132,7 +131,7 @@
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
                 <i class="bi bi-mortarboard-fill me-2"></i>
-                Space seat
+                SpaceSeat
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -306,7 +305,7 @@
             <div class="text-center mb-5">
                 <span class="text-primary">FAQ</span>
                 <h2 class="display-5 fw-bold mt-2">Perguntas Frequentes</h2>
-                <p class="text-white-50">Encontre respostas para suas dúvidas</p>
+                <p class="text-white-50">Tira as tuas dúvidas e prepara-te para fazeres parte da SpaceSeat</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -334,7 +333,7 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer class="bg-black py-5">
+    <footer class="bg-rgba(255, 255, 255, 0.05) py-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
@@ -343,7 +342,7 @@
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="text-white-50"><i class="bi bi-facebook"></i></a>
                         <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="text-white-50"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.instagram.com/__spaceseat/" class="text-white-50"><i class="bi bi-instagram"></i></a>
                         <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>

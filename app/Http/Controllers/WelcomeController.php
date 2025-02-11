@@ -118,6 +118,10 @@ class WelcomeController extends Controller
 
         $faqs = [
             [
+                'question' => 'O que e  space seat?',
+                'answer' => 'Após a inscrição, você tem acesso imediato e vitalício a todo o conteúdo do curso, podendo estudar no seu próprio ritmo.'
+            ],
+            [
                 'question' => 'Como funciona o acesso aos cursos?',
                 'answer' => 'Após a inscrição, você tem acesso imediato e vitalício a todo o conteúdo do curso, podendo estudar no seu próprio ritmo.'
             ],
