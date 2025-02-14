@@ -16,10 +16,13 @@ body {
 
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
-                url('/images/backgroung-pattern-3.png') no-repeat center center;
+    url('../images/cursos-de-programacao-para-iniciantes.jpg'), no-repeat center center;
     background-size: cover;
     height: 100vh;
     padding: 120px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .feature-card {
@@ -61,8 +64,8 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: darken(var(--primary-color), 10%);
-    border-color: darken(var(--primary-color), 10%);
+    background-color: var(--primary-color), 10%;
+    border-color: var(--primary-color), 10%;
 }
 
 .section-padding {
