@@ -14,15 +14,10 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <style>
-        .hero-section {
-            background: url('/images/backgroung-pattern-3.png');
-        }
-    </style>
 
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Navbar
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
@@ -58,7 +53,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav>  -->
 
     <!-- Hero Section -->
     <section class="hero-section text-center">
