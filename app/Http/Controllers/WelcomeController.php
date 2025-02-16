@@ -118,24 +118,39 @@ class WelcomeController extends Controller
 
         $faqs = [
             [
-                'question' => 'O que e  space seat?',
+                'question' => 'O que é a Space Seat?',
+                'answer' => 'A Space Seat é uma plataforma online focada na oferta de cursos de alta qualidade em diversas áreas do conhecimento. Nosso objetivo é proporcionar uma experiência de aprendizado acessível e eficaz para todos os nossos usuários.'
+            ],
+            [
+                'question' => 'Como posso me inscrever em um curso?',
                 'answer' => 'Após a inscrição, você tem acesso imediato e vitalício a todo o conteúdo do curso, podendo estudar no seu próprio ritmo.'
             ],
             [
-                'question' => 'Como funciona o acesso aos cursos?',
-                'answer' => 'Após a inscrição, você tem acesso imediato e vitalício a todo o conteúdo do curso, podendo estudar no seu próprio ritmo.'
+                'question' => 'Os cursos são gratuitos ou pagos?',
+                'answer' => 'Todos os cursos oferecidos na Space Seat são gratuitos, proporcionando acesso livre ao conhecimento para todos os usuários.'
             ],
             [
-                'question' => 'Os certificados são reconhecidos?',
-                'answer' => 'Sim, todos os nossos certificados são reconhecidos pelo mercado e contam com verificação digital.'
+                'question' => 'Como funciona o certificado de conclusão?',
+                'answer' => 'Ao concluir um curso, receberás um certificado digital de conclusão, que poderá ser baixado e compartilhado no teu perfil profissional, como no LinkedIn.
+'
+            ],
+            [
+                'question' => 'Existe um prazo para concluir os cursos?',
+                'answer' => 'Ao concluir um curso, receberás um certificado digital de conclusão, que poderá ser baixado e compartilhado no teu perfil profissional, como no LinkedIn.
+'
             ],
             [
                 'question' => 'Existe suporte durante os cursos?',
-                'answer' => 'Oferecemos suporte completo através de nossa comunidade no discord, fórum exclusivo e mentoria com os instrutores.'
+                'answer' => 'Não, os cursos podem ser feitos no teu próprio ritmo. Uma vez inscrito, terás acesso vitalício ao conteúdo.'
             ],
             [
-                'question' => 'Posso assistir as aulas offline?',
-                'answer' => 'Sim, nosso app permite que você baixe as aulas para assistir offline quando e onde quiser.'
+                'question' => 'Posso acessar os cursos pelo celular?',
+                'answer' => 'Sim! Os cursos da Space Seat podem ser acessados através do navegador do teu celular, garantindo flexibilidade para estudar de onde quiseres.'
+            ],
+            [
+                'question' => 'Posso interagir com outros alunos?',
+                'answer' => 'Caso tenhas dúvidas ou problemas técnicos, podes entrar em contato com o nosso suporte através do e-mail suporte@spaceseat.com ou pelo chat disponível na plataforma.
+.'
             ]
         ];
 
