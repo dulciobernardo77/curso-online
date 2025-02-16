@@ -56,20 +56,61 @@
     </nav>  -->
 
     <!-- Hero Section -->
-    <section class="hero-section text-center">
-        <div class="container">
-            <span class="badge  mb-3">🚀 Aprenda no seu ritmo</span>
-            <h1 class="display-4 fw-bold mb-4">Aprenda. Cresça.<br>Conquiste seu futuro.</h1>
-            <p class="lead text-white-50 mb-5">
-                Junte-se a mais de 50.000 alunos transformando suas carreiras<br>
-                com cursos práticos e certificados reconhecidos pelo mercado.
-            </p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="{{ route('login') }}" class="btn btn-primary btn-lg px-5">
-                    Começar Agora
-                    <i class="bi bi-arrow-right ms-2"></i>
-                </a>
-                <a href="#courses" class="btn btn-outline-light btn-lg px-5">Ver Cursos</a>
+    <section class="hero-section">
+        <div class="container h-100">
+            <div class="row align-items-center justify-content-between h-100">
+                <div class="col-lg-6 text-start hero-content">
+                    <span class="badge mb-3 d-inline-flex align-items-center">
+                        <i class="bi bi-rocket-takeoff me-2"></i>
+                        Aprenda no seu ritmo
+                    </span>
+                    <h1 class="display-4 fw-bold mb-4 hero-title">
+                        Domine novas habilidades.<br>
+                        <span class="gradient-text">Conquiste seu futuro.</span>
+                    </h1>
+                    <p class="lead text-white-50 mb-5">
+                        Junte-se a mais de 50.000 alunos transformando suas carreiras
+                        com cursos práticos e certificados reconhecidos pelo mercado.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="{{ route('login') }}" class="btn btn-primary btn-lg px-5">
+                            Começar Agora
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                        <a href="#courses" class="btn btn-outline-light btn-lg px-5">
+                            Ver Cursos
+                        </a>
+                    </div>
+                    <div class="mt-5 d-flex align-items-center gap-4">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                            <span>Acesso vitalício</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                            <span>Certificado incluso</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="hero-image-wrapper">
+                        <img src="/images/for-who.jpg" alt="Educação Online" class="hero-image">
+                        <div class="floating-card top">
+                            <i class="bi bi-lightning-charge-fill text-warning"></i>
+                            <span>+100 aulas disponíveis</span>
+                        </div>
+                        <div class="floating-card bottom">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-group me-2">
+                                    <img src="/images/avatar1.jpg" alt="User">
+                                    <img src="/images/avatar2.jpg" alt="User">
+                                    <img src="/images/avatar3.jpg" alt="User">
+                                </div>
+                                <span>50k+ alunos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -153,7 +194,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="feature-card p-4 h-100">
-                        <i class="bi bi-certificate fs-2 text-primary mb-3"></i>
+                    <i class="bi bi-people fs-2 text-primary mb-3"></i>
                         <h4>Certificação Reconhecida</h4>
                         <p class="text-white-50">Obtenha certificados validados pelo mercado</p>
                     </div>
@@ -191,7 +232,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="section-padding bg-black">
+    <section class="fAQ section-padding bg-black">
         <div class="container">
             <div class="text-center mb-5">
                 <span class="text-primary">FAQ</span>
