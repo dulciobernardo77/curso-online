@@ -1,89 +1,142 @@
+/* Root Variables */
 :root {
-    --primary-color: #1a73e8;
-
+    --primary-color: #4F46E5;
+    --secondary-color: #818CF8;
+    --dark-bg: #0F172A;
+    --card-bg: rgba(30, 41, 59, 0.4);
 }
 
+/* Global Styles */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #0A0A0A;
     color: #fff;
 }
 
+/* Navbar */
 .navbar {
     background-color: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
 }
 
+/* Hero Section */
 .hero-section {
     background: url('/images/trial-start-bg-image.png') no-repeat center center;
     background-size: cover;
     height: 100vh;
-    padding: 120px 15px; 
+    padding: 120px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-
-.feature-card {
+/* Feature, Course & Testimonial Cards */
+.feature-card,
+.course-card,
+.testimonial-card {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
     transition: all 0.3s ease;
 }
 
-.feature-card:hover {
+.feature-card:hover,
+.testimonial-card:hover {
     transform: translateY(-5px);
-    border-color: var(--primary-color);
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
+/* Course Card */
 .course-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
     overflow: hidden;
 }
 
 .course-card img {
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
 .course-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
+/* Stats Counter */
 .stats-counter {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary-color);
 }
 
+/* Buttons */
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-color), 10%;
-    border-color: var(--primary-color), 10%;
+    background-color: rgba(79, 70, 229, 0.9);
+    border-color: rgba(79, 70, 229, 0.9);
 }
 
+/* Section Padding */
 .section-padding {
     padding: 80px 0;
 }
 
+/* Testimonials Section */
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .testimonial-card {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 24px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .testimonial-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
 }
 
+.testimonial-card img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.testimonial-card .testimonial-content {
+    flex-grow: 1;
+}
+
+.testimonial-card .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.testimonial-card .testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.fAQ{
+    background: url('/images/bg-depoimentos.svg') no-repeat center center;
+}
+
+/* Accordion */
 .accordion-button:not(.collapsed) {
     color: var(--primary-color);
     background-color: rgba(26, 115, 232, 0.1);
@@ -97,15 +150,19 @@ body {
 .accordion-button::after {
     filter: invert(1);
 }
-footer{
-    background-color:rgba(255, 255, 255, 0.05);
+
+/* Footer */
+footer {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
+/* Input Group */
 .input-group .form-control:focus {
     border-color: var(--primary-color);
     box-shadow: none;
 }
 
+/* Animations */
 .fade-in {
     opacity: 1 !important;
     transform: translateY(0) !important;
