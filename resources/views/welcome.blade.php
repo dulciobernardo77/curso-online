@@ -17,7 +17,7 @@
 
 </head>
 <body>
-    <!-- Navbar
+    <!-- Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
@@ -53,7 +53,7 @@
                 </ul>
             </div>
         </div>
-    </nav>  -->
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -120,18 +120,22 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <i class="bi bi-book"></i>
                     <div class="stats-counter" data-count="150">0</div>
                     <p class="text-white-50">Cursos</p>
                 </div>
                 <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <i class="bi bi-people"></i>
                     <div class="stats-counter" data-count="50000">0</div>
                     <p class="text-white-50">Alunos</p>
                 </div>
                 <div class="col-md-3 col-6">
+                    <i class="bi bi-mortarboard"></i>
                     <div class="stats-counter" data-count="120">0</div>
                     <p class="text-white-50">Instrutores</p>
                 </div>
                 <div class="col-md-3 col-6">
+                    <i class="bi bi-trophy"></i>
                     <div class="stats-counter" data-count="98">0</div>
                     <p class="text-white-50">% Satisfação</p>
                 </div>
