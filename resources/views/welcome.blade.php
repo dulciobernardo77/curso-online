@@ -30,10 +30,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio</a>
+                        <a class="nav-link" href="#">Cursos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cursos</a>
+                        <a class="nav-link" href="#">sobre-nos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">blog</a>
@@ -62,8 +62,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
+      <!-- Hero Section -->
+      <section class="hero-section">
         <div class="container h-100">
             <div class="row align-items-center justify-content-between h-100">
                 <div class="col-lg-6 text-start hero-content">
@@ -99,14 +99,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 d-none d-lg-block">
+                <div class="col-lg-6 d-none d-lg-block">
                     <div class="hero-image-wrapper">
-                        <img src="/images/erasebg-transformed.png" alt="Educação Online" class="hero-image">
+                        <img src="/images/erasebg-transformed.png" alt="Educação Online" class="hero-image img-fluid w-100">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Stats Section -->
     <section class="section-padding border-top border-bottom border-secondary">
