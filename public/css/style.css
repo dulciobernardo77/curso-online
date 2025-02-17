@@ -83,6 +83,12 @@ body {
     align-items: center;
     text-align: center;
 }
+.hero-image-wrapper{
+    width: 780px;
+}
+.hero-image-wrapper img{
+    width: 100%;
+}
 
 /* Feature, Course & Testimonial Cards */
 .feature-card,
@@ -187,9 +193,8 @@ body {
 }
 .fAQ{
     background: url('/images/bg-depoimentos.svg') no-repeat center center;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     overflow: hidden;
     transition: height 0.3s ease-in-out;
 

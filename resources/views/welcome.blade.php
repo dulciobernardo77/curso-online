@@ -30,14 +30,21 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#courses">Inicio</a>
+                        <a class="nav-link" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#instructors">Cursos</a>
+                        <a class="nav-link" href="#">Cursos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#pricing">blog</a>
+                        <a class="nav-link" href="#">blog</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Comunidade</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav ms-auto">
                     @auth
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
@@ -94,21 +101,7 @@
                 </div>
                 <div class="col-lg-5 d-none d-lg-block">
                     <div class="hero-image-wrapper">
-                        <img src="/images/for-who.jpg" alt="Educação Online" class="hero-image">
-                        <div class="floating-card top">
-                            <i class="bi bi-lightning-charge-fill text-warning"></i>
-                            <span>+100 aulas disponíveis</span>
-                        </div>
-                        <div class="floating-card bottom">
-                            <div class="d-flex align-items-center">
-                                <div class="avatar-group me-2">
-                                    <img src="/images/avatar1.jpg" alt="User">
-                                    <img src="/images/avatar2.jpg" alt="User">
-                                    <img src="/images/avatar3.jpg" alt="User">
-                                </div>
-                                <span>50k+ alunos</span>
-                            </div>
-                        </div>
+                        <img src="/images/erasebg-transformed.png" alt="Educação Online" class="hero-image">
                     </div>
                 </div>
             </div>
