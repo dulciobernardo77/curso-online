@@ -62,8 +62,8 @@
         </div>
     </nav>
 
-      <!-- Hero Section -->
-      <section class="hero-section">
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="container h-100">
             <div class="row align-items-center justify-content-between h-100">
                 <div class="col-lg-6 text-start hero-content">
