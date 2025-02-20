@@ -152,11 +152,11 @@
                         <div class="separator">- OU -</div>
 
                         <div class="social-login">
-                            <a href="{{ route('google.login') }}" class="social-btn">
+                            <a href="{{ route('google.login') }}" class="social-btn w-50">
                                 <img src="https://cdn.cdnlogo.com/logos/g/35/google-icon.svg" width="20" height="20" alt="Google">
                                 Entrar com Google
                             </a>
-                            <a href="{{ route('github.login') }}" class="social-btn w-90">
+                            <a href="{{ route('github.login') }}" class="social-btn w-50 ">
                                 <img src="https://cdn.cdnlogo.com/logos/g/69/github-icon.svg" width="20" height="20" alt="GitHub">
                                 Entrar com GitHub
                             </a>

@@ -114,7 +114,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-3 col-6 mb-4 mb-md-0">
-                    <i class="bi bi-book"></i>
+                    <i class="bi bi-book "></i>
                     <div class="stats-counter" data-count="150">0</div>
                     <p class="text-white-50">Cursos</p>
                 </div>

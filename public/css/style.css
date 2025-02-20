@@ -13,7 +13,7 @@ body {
     color: #fff;
 }
 
-/* Navbar Melhorada */
+/* Navbar*/
 .navbar {
     background-color: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(10px);
@@ -105,10 +105,22 @@ body {
     align-items: center;
 }
 
+.badge {
+    background: rgba(79, 70, 229, 0.1);
+    color: var(--secondary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+}
 .hero-image-wrapper img {
     width: 100%;
     max-width: 1100px;
     height: auto;
+}
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -216,7 +228,7 @@ body {
 .fAQ{
     background: url('/images/bg-depoimentos.svg') no-repeat center center;
     background-size: cover;
-    background-position: center;
+
     overflow: hidden;
     transition: height 0.3s ease-in-out;
 
