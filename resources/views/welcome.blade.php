@@ -62,7 +62,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Sectiohhn -->
     <section class="hero-section">
         <div class="container h-100">
             <div class="row align-items-center justify-content-between h-100">
