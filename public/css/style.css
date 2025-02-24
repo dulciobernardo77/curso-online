@@ -140,7 +140,9 @@ body {
     border-color: var(--secondary-color);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
+#courses{
 
+}
 /* Course Card */
 .course-card {
     overflow: hidden;
