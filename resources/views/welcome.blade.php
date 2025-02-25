@@ -19,8 +19,8 @@
 </head>
 
 <body>
-    <!-- Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- Navbar
+    <nav-- class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
                 SpaceSeat
@@ -47,21 +47,21 @@
             <div>
                 <ul class="navbar-nav ms-auto">
                     @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-                        </li>
-                    @else
-                        <li class="nav-item">
-                            <a class="btn btn-primary ms-2" href="{{ route('login') }}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-primary ms-2" href="{{ route('register') }}">Registrar</a>
-                        </li>
+                                                                            <li class="nav-item">
+                                                                                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                                                                            </li>
+@else
+    <li class="nav-item">
+                                                                                <a class="btn btn-primary ms-2" href="{{ route('login') }}">Login</a>
+                                                                            </li>
+                                                                            <li class="nav-item">
+                                                                                <a class="btn btn-primary ms-2" href="{{ route('register') }}">Registrar</a>
+                                                                            </li>
                     @endauth
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav-->
 
     <!-- Hero Sectiohhn -->
     <section class="hero-section">
@@ -126,7 +126,7 @@
                     <p class="text-white-50">Alunos</p>
                 </div>
                 <div class="col-md-3 col-6">
-                    <i class="bi bi-mortarboard"></i>
+                    <i data-count="120" class="bi bi-mortarboard"></i>
                     <div class="stats-counter" data-count="120">0</div>
                     <p class="text-white-50">Instrutores</p>
                 </div>
@@ -169,37 +169,110 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="section-padding bg-black">
-        <div class="container">
-            <div class="mb-5 text-center">
-                <span class="text-primary">Por que nos escolher</span>
-                <h2 class="display-5 fw-bold mt-2">Recursos Exclusivos</h2>
-                <p class="text-white-50">Descubra o que torna nossa plataforma única</p>
+    <!-- por que  da escolha Section -->
+    <section class="spacer py-5">
+        <div class="section-title container text-center">
+            <p>Por que escolher a</p>
+            <h1><span style="color: var(--primary-color);">&lt;</span> SpaceSeat <span
+                    style="color: var(--primary-color);">?&gt;</span></h1>
+        </div>
+
+        <div class="features-container">
+            <div class="row g-4 mb-5">
+                <div class="col-md-4 text-center">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                            class="feature-icon" viewBox="0 0 16 16">
+                            <path
+                                d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">+138 horas de conteúdo exclusivo</h3>
+                    <p class="feature-description">Tenha acesso a mais de 138 horas de conteúdo exclusivo e aprofunde
+                        seus conhecimentos.</p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                            class="feature-icon" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path
+                                d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Novas aulas todas as semanas</h3>
+                    <p class="feature-description">Novas aulas todas as semanas, mantendo você atualizado
+                        constantemente.</p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                            class="feature-icon" viewBox="0 0 16 16">
+                            <path
+                                d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">+1310 membros na comunidade</h3>
+                    <p class="feature-description">Junte-se a uma comunidade de mais de 1310 membros e amplie seus
+                        horizontes.</p>
+                </div>
             </div>
+
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="feature-card h-100 p-4">
-                        <i class="bi bi-laptop fs-2 text-primary mb-3"></i>
-                        <h4>Aprenda em Qualquer Lugar</h4>
-                        <p class="text-white-50">Acesse o conteúdo de qualquer dispositivo, a qualquer momento</p>
+                <div class="col-md-4 text-center">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                            class="feature-icon" viewBox="0 0 16 16">
+                            <path
+                                d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z" />
+                        </svg>
                     </div>
+                    <h3 class="feature-title">Acesso aos códigos no GitHub da Academia</h3>
+                    <p class="feature-description">Tenha acesso a todos os códigos no GitHub da Academia para aprimorar
+                        sua aprendizagem.</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="feature-card h-100 p-4">
-                        <i class="bi bi-people fs-2 text-primary mb-3"></i>
-                        <h4>Comunidade Ativa</h4>
-                        <p class="text-white-50">Conecte-se com outros alunos e aprenda juntos</p>
+
+                <div class="col-md-4 text-center">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                            class="feature-icon" viewBox="0 0 16 16">
+                            <path
+                                d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z" />
+                        </svg>
                     </div>
+                    <h3 class="feature-title">Servidor dedicado para alunos no Discord</h3>
+                    <p class="feature-description">Acesso a um servidor dedicado no Discord exclusivo para alunos.</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="feature-card h-100 p-4">
-                        <i class="bi bi-award fs-2 text-primary mb-3"></i>
-                        <h4>Certificação Reconhecida</h4>
-                        <p class="text-white-50">Obtenha certificados validados pelo mercado</p>
+
+                <div class="col-md-4 text-center">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                            class="feature-icon" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0a8 8 0 0 0 5.262 14.959c.2-.052.4-.106.586-.163.167-.035.334-.082.5-.129.334-.093.666-.185.983-.317a7.93 7.93 0 0 0 .44-.196 6.424 6.424 0 0 0 .665-.356c.23-.145.447-.321.647-.513a7.97 7.97 0 0 0 .917-1.127c.258-.397.488-.864.653-1.24.164-.376.305-.795.394-1.061a6.021 6.021 0 0 0 .138-.535c.03-.135.05-.273.063-.416.013-.143.017-.288.012-.437a2.96 2.96 0 0 0-.06-.523A3.932 3.932 0 0 0 13.863 7c-.047-.146-.102-.282-.164-.41a3.3 3.3 0 0 0-.23-.467 3.097 3.097 0 0 0-.701-.872A3.104 3.104 0 0 0 12 4.831c-.118-.044-.238-.077-.36-.1a3.242 3.242 0 0 0-.409-.05 3.087 3.087 0 0 0-1.053.13 2.986 2.986 0 0 0-1.992 2.064 3.23 3.23 0 0 0-.054 1.31c.027.22.064.437.112.65a3.03 3.03 0 0 0 .291.725c.06.123.125.24.195.353.075.123.148.24.233.35a3.106 3.106 0 0 0 .539.57c.1.082.21.159.324.232.132.083.27.16.414.23.033.016.064.044.1.044H10v2.007h-.006a1.65 1.65 0 0 1-.126-.04 6.992 6.992 0 0 1-.553-.22 6.256 6.256 0 0 1-1.188-.762 6.57 6.57 0 0 1-.748-.74 6.848 6.848 0 0 1-.585-.77c-.177-.273-.333-.569-.463-.882a6.294 6.294 0 0 1-.341-1.092 6.173 6.173 0 0 1-.087-1.92c.037-.31.094-.615.174-.91.076-.293.174-.577.29-.851.232-.548.52-1.051.813-1.496a7.85 7.85 0 0 1 .78-1.02A7.9 7.9 0 0 1 8 0z" />
+                        </svg>
                     </div>
+                    <h3 class="feature-title">Pronto para começar sua jornada de aprendizado?</h3>
+                    <p class="feature-description">Torne-se um aluno agora e desbloqueie acesso exclusivo ao nosso
+                        conteúdo e comunidade!</p>
                 </div>
             </div>
+        </div>
+
+        <div class="container mt-5 text-center">
+            <a href="{{ route('login') }}" class="cta-button">
+                SEJA UM ALUNO DA SpaceSeat
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="ms-2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                    <path fill-rule="evenodd"
+                        d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                </svg>
+            </a>
         </div>
     </section>
 
@@ -220,7 +293,7 @@
                                     class="rounded-circle" width="60" height="60">
                                 <div class="ms-3">
                                     <h5 class="mb-0">{{ $testimonial['name'] }}</h5>
-                                    <small class="text-primary">{{ $testimonial['role'] }}</small>
+
                                 </div>
                             </div>
                             <p class="text-white-50">{{ $testimonial['content'] }}</p>
