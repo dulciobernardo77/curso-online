@@ -63,55 +63,46 @@ class WelcomeController extends Controller
             [
                 'image' => '/images/user1.jpg',
                 'name' => 'Dulcio Bernardo',
-                'role' => 'Desenvolvedor Full Stack',
                 'content' => 'Os cursos da Space seat mudaram minha carreira. Em 6 meses consegui minha primeira vaga como desenvolvedor.'
             ],
             [
                 'image' => '/images/user2.jpg',
                 'name' => 'Maria Santos',
-                'role' => 'Data Scientist',
                 'content' => 'A qualidade do conteúdo e o suporte da comunidade são excepcionais. Recomendo fortemente.'
             ],
             [
                 'image' => '/images/user3.jpg',
                 'name' => 'Pedro Costa',
-                'role' => 'Mobile Developer',
                 'content' => 'A metodologia prática e os projetos reais fizeram toda a diferença no meu aprendizado.'
             ],
             [
                 'image' => '/images/user1.jpg',
                 'name' => 'Dulcio Bernardo',
-                'role' => 'Desenvolvedor Full Stack',
                 'content' => 'Os cursos da Space seat mudaram minha carreira. Em 6 meses consegui minha primeira vaga como desenvolvedor.'
             ],
             [
                 'image' => '/images/user2.jpg',
                 'name' => 'Maria Santos',
-                'role' => 'Data Scientist',
                 'content' => 'A qualidade do conteúdo e o suporte da comunidade são excepcionais. Recomendo fortemente.'
             ],
             [
                 'image' => '/images/user3.jpg',
                 'name' => 'Pedro Costa',
-                'role' => 'Mobile Developer',
                 'content' => 'A metodologia prática e os projetos reais fizeram toda a diferença no meu aprendizado.'
             ],
             [
                 'image' => '/images/user1.jpg',
                 'name' => 'Dulcio Bernardo',
-                'role' => 'Desenvolvedor Full Stack',
                 'content' => 'Os cursos da Space seat mudaram minha carreira. Em 6 meses consegui minha primeira vaga como desenvolvedor.'
             ],
             [
                 'image' => '/images/user2.jpg',
                 'name' => 'Maria Santos',
-                'role' => 'Data Scientist',
                 'content' => 'A qualidade do conteúdo e o suporte da comunidade são excepcionais. Recomendo fortemente.'
             ],
             [
                 'image' => '/images/user3.jpg',
                 'name' => 'Pedro Costa',
-                'role' => 'Mobile Developer',
                 'content' => 'A metodologia prática e os projetos reais fizeram toda a diferença no meu aprendizado.'
             ]
         ];
@@ -155,7 +146,6 @@ class WelcomeController extends Controller
         ];
 
         return view('welcome', compact('featuredCourses', 'testimonials', 'faqs'));
-
         return view('welcome', compact('featuredCourses'));
     }
 }
