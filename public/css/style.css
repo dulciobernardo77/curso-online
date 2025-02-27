@@ -320,3 +320,331 @@ footer {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
+
+/* Discord Community Section */
+.discord-community-section {
+    background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 100%);
+    position: relative;
+}
+
+/* Stats Section */
+.stats-section {
+    background-color: #000;
+    padding: 60px 0;
+}
+
+.stats-item {
+    padding: 20px;
+}
+
+.stats-icon {
+    font-size: 28px;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.stats-icon i {
+    font-size: 28px;
+}
+
+.stats-number {
+    font-size: 32px;
+    color: #fff;
+    margin: 0;
+}
+
+.stats-label {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+/* Ajuste do brilho da seção Discord para combinar */
+.discord-glow {
+    background: radial-gradient(circle at 50% 50%, rgba(114, 137, 218, 0.08) 0%, rgba(0,0,0,0) 70%);
+}
+
+/* Ajuste do brilho da seção Stats */
+.stats-glow {
+    background: radial-gradient(circle at 50% 50%, rgba(var(--primary-rgb), 0.08) 0%, rgba(0,0,0,0) 70%);
+}
+
+/* Botão Discord melhorado */
+.btn-discord {
+    background: linear-gradient(45deg, #5865F2 0%, #7289da 100%);
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.2);
+}
+
+.btn-discord:hover {
+    background: linear-gradient(45deg, #4752c4 0%, #5b73c7 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(88, 101, 242, 0.4);
+}
+
+.btn-discord:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.2);
+}
+
+.btn-discord i {
+    font-size: 1.2em;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Efeito de brilho no hover */
+.btn-discord::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #5865F2, #7289da, #5865F2);
+    border-radius: inherit;
+    z-index: -1;
+    animation: discord-border 2s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-discord:hover::before {
+    opacity: 1;
+}
+
+@keyframes discord-border {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Courses Section */
+.courses-section {
+    background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 100%);
+    padding: 5rem 0;
+    position: relative;
+}
+
+/* Course Card */
+.course-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--primary-rgb), 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Course Image */
+.course-image {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-image img {
+    transform: scale(1.05);
+}
+
+.course-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.course-level {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.course-duration {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* Course Content */
+.course-content {
+    padding: 1.5rem;
+}
+
+.course-tags .badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.course-title {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    line-height: 1.4;
+}
+
+.course-meta {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.course-meta i {
+    margin-right: 0.5rem;
+}
+
+/* Course Categories */
+.course-categories .btn-outline-light {
+    border-radius: 20px;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+}
+
+.course-categories .btn-outline-light.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Progress Bar */
+.course-progress {
+    margin-top: 1rem;
+}
+
+.course-progress .progress {
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .courses-section {
+        padding: 3rem 0;
+    }
+
+    .course-categories {
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+
+    .course-categories .d-flex {
+        width: max-content;
+    }
+
+    .stats-item {
+        margin-bottom: 30px;
+    }
+
+    .stats-number {
+        font-size: 28px;
+    }
+}
+
+/* Why Choose Section Styles */
+.why-choose-section {
+    background-color: #000;
+    padding: 80px 0;
+}
+
+.feature-card {
+    padding: 20px;
+    background: transparent;
+    border: none;
+    text-align: left;
+}
+
+.feature-icon {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.feature-icon i {
+    font-size: 24px;
+}
+
+/* Usando a cor primária do projeto */
+.text-primary {
+    color: #6C5DD3 !important;
+}
+
+.feature-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.feature-description {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* CTA Button - usando a cor primária do projeto */
+.btn-primary {
+    background-color: #6C5DD3;
+    border: none;
+    padding: 15px 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #5b4eb8;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .feature-card {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .feature-icon {
+        margin-bottom: 15px;
+    }
+}
