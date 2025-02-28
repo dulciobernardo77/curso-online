@@ -241,7 +241,7 @@
                 <p class="text-gray-400 mb-2">Por que escolher a</p>
                 <h2 class="display-4 fw-bold mb-5">
                     <span class="text-primary">&lt;</span>
-                    Pinguim
+                    SpaceSeat
                     <span class="text-primary">?&gt;</span>
                 </h2>
             </div>
@@ -330,7 +330,7 @@
             <!-- CTA -->
             <div class="text-center mt-5">
                 <a href="{{ route('register') }}" class="btn btn-primary btn-lg px-5">
-                    SEJA UM ALUNO DA PINGUIM
+                    SEJA UM ALUNO DA SPACESEAT
                 </a>
             </div>
         </div>
