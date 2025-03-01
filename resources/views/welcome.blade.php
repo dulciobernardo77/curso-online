@@ -19,48 +19,6 @@
 </head>
 
 <body>
-    <!-- Navbar
-    <nav-- class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <span class="gradient-text">SpaceSeat</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#courses">Cursos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Sobre nós</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Depoimentos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#faq">FAQ</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ms-auto">
-                    @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-                        </li>
-                    @else
-                        <li class="nav-item">
-                            <a class="btn btn-outline-primary ms-2" href="{{ route('login') }}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-primary ms-2" href="{{ route('register') }}">Registrar</a>
-                        </li>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-    </nav-->
-
     <!-- Hero Section -->
     <section class="hero-section position-relative overflow-hidden">
         <div class="h-100 container">
@@ -355,6 +313,7 @@
                                     <h5 class="mb-0">{{ $testimonial['name'] }}</h5>
 
                                 </div>
+
                             </div>
                             <p class="text-white-50">{{ $testimonial['content'] }}</p>
                         </div>
