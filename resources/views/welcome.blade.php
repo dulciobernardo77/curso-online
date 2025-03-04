@@ -358,60 +358,28 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-rgba(255, 255, 255, 0.05) py-5">
+    <footer class="py-4" style="border-top: 1px solid rgba(255,255,255,0.03);">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <h5 class="mb-4">Sobre a Space seat</h5>
-                    <p class="text-white-50">Plataforma líder em educação online focada em tecnologia e desenvolvimento
-                        profissional.</p>
-                    <div class="d-flex mt-4 gap-3">
-                        <a href="#" class="text-white-50"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
-                        <a href="https://www.instagram.com/__spaceseat/" class="text-white-50"><i
-                                class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
-                    </div>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <!-- Logo -->
+                <div>
+                    <img src="/images/logo.png" alt="Space Seat" style="width: 100px; opacity: 0.9;">
                 </div>
-                <div class="col-lg-2">
-                    <h5 class="mb-4">Links Rápidos</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Cursos</a>
-                        </li>
-                        <li class="mb-2"><a href="#"
-                                class="text-white-50 text-decoration-none">Instrutores</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Preços</a>
-                        </li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2">
-                    <h5 class="mb-4">Suporte</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Contato</a>
-                        </li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Ajuda</a>
-                        </li>
-                        <li class="mb-2"><a href="#"
-                                class="text-white-50 text-decoration-none">Privacidade</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h5 class="mb-4">Newsletter</h5>
-                    <p class="text-white-50">Receba novidades e atualizações sobre nossos cursos.</p>
-                    <form class="mt-4">
-                        <div class="input-group">
-                            <input type="email" class="form-control bg-transparent text-white"
-                                placeholder="Seu email" style="border-color: rgba(255,255,255,0.1)">
-                            <button class="btn btn-primary" type="submit">Inscrever</button>
-                        </div>
-                    </form>
+
+                <!-- Links principais -->
+                <div class="d-flex gap-4">
+                    <a href="#" class="text-white-50 text-decoration-none" style="font-size: 13px; opacity: 0.7;">Cursos</a>
+                    <a href="#" class="text-white-50 text-decoration-none" style="font-size: 13px; opacity: 0.7;">Comunidade</a>
+                    <a href="#" class="text-white-50 text-decoration-none" style="font-size: 13px; opacity: 0.7;">Blog</a>
+                    <a href="https://www.instagram.com/__spaceseat/" class="text-white-50" style="font-size: 13px; opacity: 0.7;">
+                        <i class="bi bi-instagram"></i>
+                    </a>
                 </div>
             </div>
-            <hr class="mb-4 mt-5" style="border-color: rgba(255,255,255,0.1)">
-            <div class="text-white-50 text-center">
-                <small>&copy; 2024 Space seat. Todos os direitos reservados.</small>
+
+            <!-- Copyright -->
+            <div class="text-center">
+                <span class="text-white-50" style="font-size: 12px; opacity: 0.5;">&copy; 2024 SpaceSeat</span>
             </div>
         </div>
     </footer>
