@@ -31,3 +31,11 @@ Route::get('/auth/github', function () {
 })->name('github.login');
 
 Route::get('/auth/github/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGithubCallback']);
+
+Route::get('/jornada', function () {
+    return view('jornada');
+})->middleware(['auth', 'verified'])->name('jornada');
+
+Route::get('/catalogo', function () {
+    return view('catalogo');
+})->middleware(['auth', 'verified'])->name('catalogo');
