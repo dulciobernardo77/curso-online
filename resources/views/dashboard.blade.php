@@ -3,188 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Seat</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Dashboard - Space Seat</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
     <style>
+        :root {
+            --bg-color: #0f1117;
+            --card-color: #171a21;
+            --accent-color: #6c47ff;
+            --text-color: #ffffff;
+            --text-secondary: #a0a0a0;
+            --border: 1px solid #20232b;
+        }
+
         body {
-            background-color: #0f1117;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            font-size: 15px;
         }
-        .bg-sidebar {
-            background-color: #0f1117;
+
+        .card {
+            background-color: var(--card-color);
+            border: none;
+            border-radius: 6px;
         }
-        .bg-card {
-            background-color: #1a1f2c;
+
+        .text-accent {
+            color: var(--accent-color);
         }
-        .sidebar-active {
-            background-color: #6c47ff;
+
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 14px;
         }
-        .icon-bg {
-            background-color: #2b2d40;
+
+        .btn-accent:hover {
+            background-color: #5a3ad9;
+            color: white;
         }
-        .icon-color {
-            color: #8b5cf6;
+
+        .btn-subtle {
+            background-color: transparent;
+            color: var(--text-secondary);
+            border: none;
+            padding: 6px 10px;
+            font-size: 14px;
         }
-        .purple-text {
-            color: #8b5cf6;
+
+        .btn-subtle:hover {
+            color: var(--text-color);
         }
-        .avatar-bg {
-            background-color: #6c47ff;
+
+        .nav-link {
+            color: var(--text-secondary);
+            padding: 8px 12px;
+            margin-bottom: 4px;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .nav-link:hover {
+            color: var(--text-color);
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .nav-link.active {
+            color: var(--accent-color);
+            background-color: rgba(108, 71, 255, 0.1);
+            font-weight: 500;
+        }
+
+        .nav-link i {
+            opacity: 0.7;
+        }
+
+        .progress {
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.06);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background-color: var(--accent-color);
+        }
+
+        .course-item {
+            transition: all 0.2s;
+        }
+
+        .course-item:hover {
+            transform: translateY(-1px);
+        }
+
+        .fs-small {
+            font-size: 13px;
+        }
+
+        .separator {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.05);
+            margin: 20px 0;
         }
     </style>
 </head>
-<body class="text-white">
-    <div class="flex min-h-screen">
-        <!-- Barra lateral -->
-        <div class="w-60 bg-sidebar border-r border-gray-800">
-            <div class="flex items-center justify-between p-4 border-b border-gray-800">
-                <div class="text-xl font-bold">Space Seat</div>
-                <button class="text-gray-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M15.707 4.293a1 1 0 010 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                    </svg>
-                </button>
-            </div>
-            <nav class="mt-5">
-                <a href="#" class="flex items-center px-4 py-3 sidebar-active text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                    </svg>
-                    Home
-                </a>
-                <a href="#" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
-                    </svg>
-                    Minha Jornada
-                </a>
-                <a href="#" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M7 4a1 1 0 011-1h4a1 1 0 011 1v1h2.5A1.5 1.5 0 0117 6.5v3.879a3 3 0 11-2 0V6.5a.5.5 0 00-.5-.5H13v1a2 2 0 01-2 2H9a2 2 0 01-2-2V6H4.5a.5.5 0 00-.5.5v7a.5.5 0 00.5.5h4.1a3 3 0 115.83 0H15.5a.5.5 0 00.5-.5v-2.879a2.98 2.98 0 01-1-.84V14.5a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 013 14.5v-8A1.5 1.5 0 014.5 5H7V4z" />
-                    </svg>
-                    Catálogo
-                </a>
-                <a href="#" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                    </svg>
-                    Eventos
-                </a>
-                <a href="#" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" />
-                    </svg>
-                    Fórum
-                </a>
-                <a href="#" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-                    </svg>
-                    Comunidade
-                </a>
-                <a href="#" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                    </svg>
-                    Ajuda
-                </a>
-            </nav>
-        </div>
 
-        <!-- Conteúdo principal -->
-        <div class="flex-1 bg-sidebar">
-            <!-- Barra de navegação superior -->
-            <div class="bg-sidebar p-4 border-b border-gray-800 flex justify-between items-center">
-                <div class="relative w-96">
-                    <svg class="absolute left-3 top-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-                    </svg>
-                    <input type="text" placeholder="Busque por assuntos e aulas" class="w-full bg-gray-800 rounded-md py-2 pl-10 pr-4 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:bg-gray-700">
+<body>
+    <div class="container-fluid px-0">
+        <div class="min-vh-100 d-flex">
+            <!-- Barra lateral ultrassimplificada -->
+            <div class="py-4 px-3" style="width: 180px;">
+                <div class="mb-5">
+                    <h6 class="fw-bold mb-0">Space Seat</h6>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <button class="relative text-gray-400 hover:text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                        </svg>
-                        <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-purple-600"></span>
-                    </button>
-                    <div class="h-8 w-8 rounded-full avatar-bg flex items-center justify-center text-white text-sm font-medium">
-                        DB
-                    </div>
-                </div>
+
+                <nav>
+                    <a href="/dashboard" class="nav-link active mb-1">
+                        <i class="bi bi-house-door me-2"></i>
+                        Home
+                    </a>
+                    <a href="/jornada" class="nav-link mb-1">
+                        <i class="bi bi-collection me-2"></i>
+                        Jornada
+                    </a>
+                    <a href="#" class="nav-link mb-1">
+                        <i class="bi bi-journal me-2"></i>
+                        Catálogo
+                    </a>
+                </nav>
             </div>
 
-            <!-- Conteúdo do dashboard -->
-            <div class="p-8">
-                <h1 class="text-3xl font-bold mb-1">Olá, João!</h1>
-                <p class="text-gray-400 mb-8">Continue sua jornada de aprendizado. Aqui está seu progresso:</p>
+            <!-- Conteúdo principal -->
+            <main class="flex-grow-1 py-4 px-4">
+                <div class="mx-auto" style="max-width: 800px;">
+                    <!-- Cabeçalho simplificado -->
+                    <header class="mb-5 d-flex justify-content-between align-items-center">
+                        <h1 class="fs-5 fw-medium m-0">Olá, João</h1>
+                        <div>
+                            <button class="btn btn-subtle">
+                                <i class="bi bi-person"></i>
+                            </button>
+                        </div>
+                    </header>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Cursos em Progresso -->
-                    <div class="bg-card rounded-lg p-6">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h2 class="text-3xl font-bold">3</h2>
-                                <p class="text-gray-400 text-sm mt-1">Cursos em Progresso</p>
-                                <p class="purple-text text-sm mt-1">2 novos esta semana</p>
-                            </div>
-                            <div class="icon-bg p-3 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon-color" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                                </svg>
+                    <!-- Progresso ultra simplificado -->
+                    <div class="mb-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="m-0 text-secondary fs-small">PROGRESSO DA TRILHA</p>
+                            <p class="m-0 fs-small">40%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 40%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Curso atual -->
+                    <div class="mb-5">
+                        <p class="text-secondary fs-small mb-3">CONTINUE APRENDENDO</p>
+
+                        <div class="card p-4 course-item">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
+                                    style="width: 36px; height: 36px; background-color: rgba(108, 71, 255, 0.1);">
+                                    <i class="bi bi-play-fill text-accent"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="fw-medium mb-1">React JS: Componentes e Estado</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="fs-small text-secondary">65% concluído</div>
+                                        <a href="#" class="btn-accent text-decoration-none">Continuar</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tempo Estudado -->
-                    <div class="bg-card rounded-lg p-6">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h2 class="text-3xl font-bold">45h</h2>
-                                <p class="text-gray-400 text-sm mt-1">Tempo Estudado</p>
-                                <p class="purple-text text-sm mt-1">+5h esta semana</p>
+                    <div class="separator"></div>
+
+                    <!-- Resumo ultrassimplificado -->
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <p class="text-secondary fs-small mb-3">SEU PROGRESSO</p>
+
+                            <div class="mb-2">
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-secondary">Cursos em andamento</span>
+                                    <span>3</span>
+                                </div>
                             </div>
-                            <div class="icon-bg p-3 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon-color" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
+                            <div class="mb-2">
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-secondary">Cursos concluídos</span>
+                                    <span>12</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-secondary">Tempo estudado</span>
+                                    <span>45h</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <p class="text-secondary fs-small mb-3">PRÓXIMOS CURSOS</p>
+
+                            <div class="mb-3">
+                                <div class="d-flex">
+                                    <span class="text-secondary me-2">4.</span>
+                                    <span>Node.js Básico</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="d-flex">
+                                    <span class="text-secondary me-2">5.</span>
+                                    <span>Express.js e APIs</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Cursos Concluídos -->
-                    <div class="bg-card rounded-lg p-6">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h2 class="text-3xl font-bold">12</h2>
-                                <p class="text-gray-400 text-sm mt-1">Cursos Concluídos</p>
-                                <p class="purple-text text-sm mt-1">+1 este mês</p>
-                            </div>
-                            <div class="icon-bg p-3 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon-color" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="separator"></div>
 
-                    <!-- Meta de Conclusão -->
-                    <div class="bg-card rounded-lg p-6">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h2 class="text-3xl font-bold">78%</h2>
-                                <p class="text-gray-400 text-sm mt-1">Meta de Conclusão</p>
-                                <p class="purple-text text-sm mt-1">Meta: 85%</p>
-                            </div>
-                            <div class="icon-bg p-3 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon-color" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
-                            </div>
-                        </div>
+                    <!-- Link minimalista -->
+                    <div class="text-center mt-4">
+                        <a href="/jornada" class="text-accent text-decoration-none">
+                            Ver jornada completa <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
+            </main>
         </div>
     </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
