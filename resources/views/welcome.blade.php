@@ -135,8 +135,8 @@
                                 <h4>{{ $course->title }}</h4>
                                 <p class="text-white-50">{{ $course->description }}</p>
                                 <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <span class="text-primary">R$ {{ $course->price }}</span>
-                                    <a href="#" class="btn btn-outline-primary">Saiba Mais</a>
+                                    <span class="text-primary">Kz {{ $course->price }}</span>
+                                    <a href="{{Route('login')}}" class="btn btn-outline-primary">Saiba Mais</a>
                                 </div>
                             </div>
                         </div>

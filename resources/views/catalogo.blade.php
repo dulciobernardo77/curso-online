@@ -159,6 +159,10 @@
             border-color: var(--accent-color);
             color: white;
         }
+
+        .fw-medium {
+            color: var(--text-color);
+        }
     </style>
 </head>
 
@@ -216,8 +220,9 @@
                             <div class="col-md-4">
                                 <div class="d-flex gap-2">
                                     <button class="filter-btn flex-grow-1 active">Todos</button>
-                                    <button class="filter-btn flex-grow-1">Iniciante</button>
-                                    <button class="filter-btn flex-grow-1">Avançado</button>
+                                    <button class="filter-btn flex-grow-1">Tecnologia</button>
+                                    <button class="filter-btn flex-grow-1">Design</button>
+                                    <button class="filter-btn flex-grow-1">Negócios</button>
                                 </div>
                             </div>
                         </div>
@@ -246,49 +251,133 @@
                                         <span class="tag">CSS</span>
                                         <span class="tag">JavaScript</span>
                                     </div>
-                                    <a href="#" class="btn-accent text-decoration-none text-center">Ver trilha</a>
+                                    <a href="#" class="btn-accent text-decoration-none text-center">
+                                        <i class="bi bi-collection me-2"></i>
+                                        Iniciar Trilha
+                                    </a>
                                 </div>
                             </div>
 
-                            <!-- Trilha Mobile -->
+                            <!-- Trilha Design UI/UX -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card course-card p-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
+                                            style="width: 40px; height: 40px; background-color: rgba(255, 71, 148, 0.1);">
+                                            <i class="bi bi-palette text-danger"></i>
+                                        </div>
+                                        <div>
+                                            <p class="fw-medium mb-0">Design UI/UX</p>
+                                            <p class="text-secondary fs-small mb-0">6 cursos • 45h</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <span class="tag">Figma</span>
+                                        <span class="tag">Design System</span>
+                                        <span class="tag">UX</span>
+                                    </div>
+                                    <a href="#" class="btn-accent text-decoration-none text-center">
+                                        <i class="bi bi-collection me-2"></i>
+                                        Iniciar Trilha
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Trilha Marketing Digital -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="card course-card p-4">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
                                             style="width: 40px; height: 40px; background-color: rgba(52, 199, 89, 0.1);">
-                                            <i class="bi bi-phone text-success"></i>
+                                            <i class="bi bi-megaphone text-success"></i>
                                         </div>
                                         <div>
-                                            <p class="fw-medium mb-0">Desenvolvimento Mobile</p>
-                                            <p class="text-secondary fs-small mb-0">4 cursos • 48h</p>
+                                            <p class="fw-medium mb-0">Marketing Digital</p>
+                                            <p class="text-secondary fs-small mb-0">8 cursos • 60h</p>
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <span class="tag">React Native</span>
-                                        <span class="tag">Flutter</span>
+                                        <span class="tag">SEO</span>
+                                        <span class="tag">Redes Sociais</span>
+                                        <span class="tag">Analytics</span>
                                     </div>
-                                    <a href="#" class="btn-accent text-decoration-none text-center">Ver trilha</a>
+                                    <a href="#" class="btn-accent text-decoration-none text-center">
+                                        <i class="bi bi-collection me-2"></i>
+                                        Iniciar Trilha
+                                    </a>
                                 </div>
                             </div>
 
-                            <!-- Trilha Data Science -->
+                            <!-- Trilha Gestão de Projetos -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="card course-card p-4">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
                                             style="width: 40px; height: 40px; background-color: rgba(255, 179, 0, 0.1);">
-                                            <i class="bi bi-graph-up text-warning"></i>
+                                            <i class="bi bi-kanban text-warning"></i>
                                         </div>
                                         <div>
-                                            <p class="fw-medium mb-0">Data Science</p>
-                                            <p class="text-secondary fs-small mb-0">6 cursos • 72h</p>
+                                            <p class="fw-medium mb-0">Gestão de Projetos</p>
+                                            <p class="text-secondary fs-small mb-0">5 cursos • 40h</p>
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <span class="tag">Python</span>
-                                        <span class="tag">Machine Learning</span>
+                                        <span class="tag">Scrum</span>
+                                        <span class="tag">Kanban</span>
+                                        <span class="tag">Agile</span>
                                     </div>
-                                    <a href="#" class="btn-accent text-decoration-none text-center">Ver trilha</a>
+                                    <a href="#" class="btn-accent text-decoration-none text-center">
+                                        <i class="bi bi-collection me-2"></i>
+                                        Iniciar Trilha
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Trilha Finanças Pessoais -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card course-card p-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
+                                            style="width: 40px; height: 40px; background-color: rgba(0, 122, 255, 0.1);">
+                                            <i class="bi bi-cash-coin text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <p class="fw-medium mb-0">Finanças Pessoais</p>
+                                            <p class="text-secondary fs-small mb-0">4 cursos • 30h</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <span class="tag">Investimentos</span>
+                                        <span class="tag">Planejamento</span>
+                                    </div>
+                                    <a href="#" class="btn-accent text-decoration-none text-center">
+                                        <i class="bi bi-collection me-2"></i>
+                                        Iniciar Trilha
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Trilha Produtividade -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card course-card p-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
+                                            style="width: 40px; height: 40px; background-color: rgba(175, 82, 222, 0.1);">
+                                            <i class="bi bi-clock-history text-purple"></i>
+                                        </div>
+                                        <div>
+                                            <p class="fw-medium mb-0">Produtividade</p>
+                                            <p class="text-secondary fs-small mb-0">3 cursos • 25h</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <span class="tag">Gestão de Tempo</span>
+                                        <span class="tag">Foco</span>
+                                    </div>
+                                    <a href="#" class="btn-accent text-decoration-none text-center">
+                                        <i class="bi bi-collection me-2"></i>
+                                        Iniciar Trilha
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -301,63 +390,72 @@
                         <p class="text-secondary fs-small mb-3">CURSOS POPULARES</p>
 
                         <div class="row g-4">
-                            <!-- Curso 1 -->
+                            <!-- Curso de Fotografia -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="card course-card p-4">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
                                             style="width: 40px; height: 40px; background-color: rgba(108, 71, 255, 0.1);">
-                                            <i class="bi bi-braces text-accent"></i>
+                                            <i class="bi bi-camera text-accent"></i>
                                         </div>
                                         <div>
-                                            <p class="fw-medium mb-0">JavaScript Avançado</p>
-                                            <p class="text-secondary fs-small mb-0">12h • Intermediário</p>
+                                            <p class="fw-medium mb-0">Fotografia Digital</p>
+                                            <p class="text-secondary fs-small mb-0">10h • Iniciante</p>
                                         </div>
                                     </div>
                                     <p class="text-secondary fs-small mb-3">
-                                        Aprenda conceitos avançados de JavaScript, incluindo ES6+, async/await e mais.
+                                        Aprenda os fundamentos da fotografia digital e edição de imagens.
                                     </p>
-                                    <a href="#" class="btn-accent text-decoration-none text-center">Começar</a>
+                                    <a href="#" class="btn-accent text-decoration-none text-center">
+                                        <i class="bi bi-play-fill me-2"></i>
+                                        Iniciar Curso
+                                    </a>
                                 </div>
                             </div>
 
-                            <!-- Curso 2 -->
+                            <!-- Curso de Vendas -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="card course-card p-4">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
                                             style="width: 40px; height: 40px; background-color: rgba(52, 199, 89, 0.1);">
-                                            <i class="bi bi-database text-success"></i>
+                                            <i class="bi bi-graph-up-arrow text-success"></i>
                                         </div>
                                         <div>
-                                            <p class="fw-medium mb-0">SQL Fundamentos</p>
-                                            <p class="text-secondary fs-small mb-0">8h • Iniciante</p>
+                                            <p class="fw-medium mb-0">Vendas B2B</p>
+                                            <p class="text-secondary fs-small mb-0">8h • Intermediário</p>
                                         </div>
                                     </div>
                                     <p class="text-secondary fs-small mb-3">
-                                        Aprenda a trabalhar com bancos de dados relacionais e consultas SQL.
+                                        Domine as técnicas de vendas para o mercado corporativo.
                                     </p>
-                                    <a href="#" class="btn-accent text-decoration-none text-center">Começar</a>
+                                    <a href="#" class="btn-accent text-decoration-none text-center">
+                                        <i class="bi bi-play-fill me-2"></i>
+                                        Iniciar Curso
+                                    </a>
                                 </div>
                             </div>
 
-                            <!-- Curso 3 -->
+                            <!-- Curso de Oratória -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="card course-card p-4">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
                                             style="width: 40px; height: 40px; background-color: rgba(255, 179, 0, 0.1);">
-                                            <i class="bi bi-git text-warning"></i>
+                                            <i class="bi bi-mic text-warning"></i>
                                         </div>
                                         <div>
-                                            <p class="fw-medium mb-0">Git & GitHub</p>
+                                            <p class="fw-medium mb-0">Oratória e Comunicação</p>
                                             <p class="text-secondary fs-small mb-0">6h • Iniciante</p>
                                         </div>
                                     </div>
                                     <p class="text-secondary fs-small mb-3">
-                                        Domine o controle de versão e colaboração em projetos com Git.
+                                        Desenvolva suas habilidades de comunicação e apresentação em público.
                                     </p>
-                                    <a href="#" class="btn-accent text-decoration-none text-center">Começar</a>
+                                    <a href="#" class="btn-accent text-decoration-none text-center">
+                                        <i class="bi bi-play-fill me-2"></i>
+                                        Iniciar Curso
+                                    </a>
                                 </div>
                             </div>
                         </div>
