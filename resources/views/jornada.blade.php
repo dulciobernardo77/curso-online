@@ -140,6 +140,15 @@
             background-color: rgba(52, 199, 89, 0.1);
             color: #34c759;
         }
+
+        .text-secondary {
+            color: #a8b0cf !important;
+        }
+
+        .fw-medium {
+            font-weight: 500;
+            color: #ffffff;
+        }
     </style>
 </head>
 
@@ -161,7 +170,7 @@
                         <i class="bi bi-collection me-2"></i>
                         Jornada
                     </a>
-                    <a href="#" class="nav-link mb-1">
+                    <a href="/catalogo" class="nav-link mb-1">
                         <i class="bi bi-journal me-2"></i>
                         Catálogo
                     </a>
@@ -177,10 +186,24 @@
                             <h1 class="fs-5 fw-medium m-0">Trilha de Desenvolvimento Web</h1>
                             <p class="text-secondary fs-small mt-1 mb-0">2 de 5 cursos concluídos</p>
                         </div>
-                        <div>
-                            <button class="btn btn-subtle">
+                        <div class="dropdown">
+                            <button class="btn btn-subtle dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-person"></i>
                             </button>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="profileDropdown">
+                                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">
+                                    <i class="bi bi-person-circle me-2"></i>Meu Perfil
+                                </a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="bi bi-box-arrow-right me-2"></i>Sair
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
                         </div>
                     </header>
 
