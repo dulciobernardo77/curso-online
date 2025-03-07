@@ -9,47 +9,49 @@
         </p>
     </header>
 
-    <x-danger-button
-        x-data=""
-        x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
-    >{{ __('Excluir conta') }}</x-danger-button>
+    <div class="mt-3">
+        <!-- Botão para abrir o modal de confirmação -->
+        <button type="button" class="btn btn-danger py-2 px-4" data-bs-toggle="modal" data-bs-target="#confirmUserDeletionModal">
+            Excluir Conta
+        </button>
 
-    <x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
-        <form method="post" action="{{ route('profile.destroy') }}" class="p-6">
-            @csrf
-            @method('delete')
+        <!-- Modal de confirmação -->
+        <div class="modal fade" id="confirmUserDeletionModal" tabindex="-1" aria-labelledby="confirmUserDeletionModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-dark text-light border-0">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fs-6 fw-medium" id="confirmUserDeletionModalLabel">Tem certeza de que deseja excluir sua conta?</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="fs-small mb-4" style="color: #ffffff; opacity: 0.95;">
+                            Depois que sua conta for excluída, todos os seus recursos e dados serão excluídos permanentemente.
+                            Antes de excluir sua conta, por favor, faça o download de quaisquer dados ou informações que deseja manter.
+                        </p>
 
-            <h2 class="text-lg font-medium text-gray-900">
-                {{ __('Tem certeza de que deseja excluir sua conta?') }}
-            </h2>
+                        <form method="post" action="{{ route('profile.destroy') }}" id="deleteAccountForm">
+                            @csrf
+                            @method('delete')
 
-            <p class="mt-1 text-sm text-gray-600">
-                {{ __('Depois que sua conta for excluída, todos os seus recursos e dados serão excluídos permanentemente. Digite sua senha para confirmar que deseja excluir permanentemente sua conta.') }}
-            </p>
-
-            <div class="mt-6">
-                <x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
-
-                <x-text-input
-                    id="password"
-                    name="password"
-                    type="password"
-                    class="mt-1 block w-3/4"
-                    placeholder="{{ __('Password') }}"
-                />
-
-                <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Senha</label>
+                                <input id="password" name="password" type="password"
+                                       class="form-control @error('password') is-invalid @enderror"
+                                       placeholder="Digite sua senha para confirmar">
+                                @error('password')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-subtle" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-danger py-2 px-4" form="deleteAccountForm">
+                            Excluir Conta
+                        </button>
+                    </div>
+                </div>
             </div>
-
-            <div class="mt-6 flex justify-end">
-                <x-secondary-button x-on:click="$dispatch('close')">
-                    {{ __('Cancelar') }}
-                </x-secondary-button>
-
-                <x-danger-button class="ms-3">
-                    {{ __('Excluir conta') }}
-                </x-danger-button>
-            </div>
-        </form>
-    </x-modal>
+        </div>
+    </div>
 </section>
