@@ -135,7 +135,7 @@
             <!-- Barra lateral ultrassimplificada -->
             <div class="py-4 px-3" style="width: 180px;">
                 <div class="mb-5">
-                    <h6 class="fw-bold mb-0">Space Seat</h6>
+                    <h3 class="fw-bold mb-0">SpaceSeat</h3>
                 </div>
 
                 <nav>
@@ -159,7 +159,7 @@
                 <div class="mx-auto" style="max-width: 800px;">
                     <!-- Cabeçalho simplificado -->
                     <header class="mb-5 d-flex justify-content-between align-items-center">
-                        <h1 class="fs-5 fw-medium m-0">Olá, João</h1>
+                        <h1 class="fs-5 fw-medium m-0">{{ Auth::user()->name }}</h1>
                         <div class="dropdown">
                             <button class="btn btn-subtle dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-person"></i>
