@@ -222,7 +222,7 @@
                         <div class="course-list-item">
                             <div class="d-flex align-items-center">
                                 <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
-                                     style="width: 32px; height: 32px; background-color: rgba(52, 199, 89, 0.1);">
+                                    style="width: 32px; height: 32px; background-color: rgba(52, 199, 89, 0.1);">
                                     <i class="bi bi-check text-success"></i>
                                 </div>
                                 <div class="flex-grow-1">
@@ -241,7 +241,7 @@
                         <div class="course-list-item">
                             <div class="d-flex align-items-center">
                                 <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
-                                     style="width: 32px; height: 32px; background-color: rgba(52, 199, 89, 0.1);">
+                                    style="width: 32px; height: 32px; background-color: rgba(52, 199, 89, 0.1);">
                                     <i class="bi bi-check text-success"></i>
                                 </div>
                                 <div class="flex-grow-1">
@@ -260,7 +260,7 @@
                         <div class="course-list-item">
                             <div class="d-flex align-items-center">
                                 <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
-                                     style="width: 32px; height: 32px; background-color: rgba(108, 71, 255, 0.1);">
+                                    style="width: 32px; height: 32px; background-color: rgba(108, 71, 255, 0.1);">
                                     <i class="bi bi-play-fill text-accent"></i>
                                 </div>
                                 <div class="flex-grow-1">
@@ -279,7 +279,7 @@
                         <div class="course-list-item">
                             <div class="d-flex align-items-center">
                                 <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
-                                     style="width: 32px; height: 32px; background-color: rgba(255, 255, 255, 0.05);">
+                                    style="width: 32px; height: 32px; background-color: rgba(255, 255, 255, 0.05);">
                                     <span class="text-secondary">4</span>
                                 </div>
                                 <div class="flex-grow-1">
@@ -298,7 +298,7 @@
                         <div class="course-list-item">
                             <div class="d-flex align-items-center">
                                 <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
-                                     style="width: 32px; height: 32px; background-color: rgba(255, 255, 255, 0.05);">
+                                    style="width: 32px; height: 32px; background-color: rgba(255, 255, 255, 0.05);">
                                     <span class="text-secondary">5</span>
                                 </div>
                                 <div class="flex-grow-1">
@@ -325,7 +325,7 @@
                                 <div class="course-list-item">
                                     <div class="d-flex align-items-center">
                                         <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
-                                             style="width: 32px; height: 32px; background-color: rgba(52, 199, 89, 0.1);">
+                                            style="width: 32px; height: 32px; background-color: rgba(52, 199, 89, 0.1);">
                                             <i class="bi bi-patch-check text-success"></i>
                                         </div>
                                         <div>
@@ -340,7 +340,7 @@
                                 <div class="course-list-item">
                                     <div class="d-flex align-items-center">
                                         <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
-                                             style="width: 32px; height: 32px; background-color: rgba(52, 199, 89, 0.1);">
+                                            style="width: 32px; height: 32px; background-color: rgba(52, 199, 89, 0.1);">
                                             <i class="bi bi-patch-check text-success"></i>
                                         </div>
                                         <div>
