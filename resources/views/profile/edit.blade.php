@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Perfil - Space Seat</title>
+    <title>Meu Perfil - SpaceSeat</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -175,7 +175,7 @@
             <!-- Barra lateral ultrassimplificada -->
             <div class="py-4 px-3" style="width: 180px;">
                 <div class="mb-5">
-                    <h6 class="fw-bold mb-0">Space Seat</h6>
+                    <h3 class="fw-bold mb-0">SpaceSeat</h3>
                 </div>
 
                 <nav>
@@ -223,25 +223,16 @@
 
                     <!-- Informações do perfil -->
                     <div class="card p-4">
-                        <h5 class="fs-6 fw-bold mb-3 text-white">INFORMAÇÕES DO PERFIL</h5>
-                        <p class="fs-small mb-4">Atualize as informações de perfil e endereço de e-mail da sua conta.</p>
-
                         @include('profile.partials.update-profile-information-form')
                     </div>
 
                     <!-- Atualizar senha -->
                     <div class="card p-4">
-                        <h5 class="fs-6 fw-bold mb-3 text-white">ALTERAR SENHA</h5>
-                        <p class="fs-small mb-4">Certifique-se de que sua conta esteja usando uma senha longa e aleatória para permanecer segura.</p>
-
                         @include('profile.partials.update-password-form')
                     </div>
 
                     <!-- Excluir conta -->
                     <div class="card p-4">
-                        <h5 class="fs-6 fw-bold mb-3 text-white">EXCLUIR CONTA</h5>
-                        <p class="fs-small mb-4">Depois que sua conta for excluída, todos os seus recursos e dados serão excluídos permanentemente.</p>
-
                         @include('profile.partials.delete-user-form')
                     </div>
                 </div>
