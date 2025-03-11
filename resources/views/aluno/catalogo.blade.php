@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo - SpaceSeat</title>
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -19,12 +22,13 @@
             --text-color: #ffffff;
             --text-secondary: #a0a0a0;
             --border: 1px solid #20232b;
+            --font-primary: 'Inter', system-ui, sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: var(--font-primary);
             line-height: 1.5;
             font-size: 15px;
         }
