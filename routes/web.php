@@ -32,10 +32,18 @@ Route::get('/auth/github', function () {
 
 Route::get('/auth/github/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGithubCallback']);
 
-Route::get('/jornada', function () {
-    return view('jornada');
-})->middleware(['auth', 'verified'])->name('jornada');
+Route::get('/aluno/jornada', function () {
+    return view('aluno.jornada');
+})->middleware(['auth', 'verified'])->name('aluno.jornada');
 
-Route::get('/catalogo', function () {
-    return view('catalogo');
-})->middleware(['auth', 'verified'])->name('catalogo');
+Route::get('/aluno/catalogo', function () {
+    return view('aluno.catalogo');
+})->middleware(['auth', 'verified'])->name('aluno.catalogo');
+
+Route::get('/aluno/teste', function () {
+    return 'Rota de teste aluno funcionando!';
+});
+
+Route::get('/teste', function () {
+    return 'Rota de teste funcionando!';
+});
