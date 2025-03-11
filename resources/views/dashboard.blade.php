@@ -143,11 +143,11 @@
                         <i class="bi bi-house-door me-2"></i>
                         Home
                     </a>
-                    <a href="/jornada" class="nav-link mb-1">
+                    <a href="/aluno/jornada" class="nav-link mb-1">
                         <i class="bi bi-collection me-2"></i>
                         Jornada
                     </a>
-                    <a href="/catalogo" class="nav-link mb-1">
+                    <a href="/aluno/catalogo" class="nav-link mb-1">
                         <i class="bi bi-journal me-2"></i>
                         Catálogo
                     </a>
@@ -262,7 +262,7 @@
 
                     <!-- Link minimalista -->
                     <div class="text-center mt-4">
-                        <a href="/jornada" class="text-accent text-decoration-none">
+                        <a href="/aluno/jornada" class="text-accent text-decoration-none">
                             Ver jornada completa <i class="bi bi-arrow-right ms-1"></i>
                         </a>
                     </div>
