@@ -228,14 +228,14 @@
 
                     <!-- Atualizar senha -->
                     <div class="card p-4">
-                        @include('profile.partials.update-password-form')
-                    </div>
+                    @include('profile.partials.update-password-form')
+            </div>
 
                     <!-- Excluir conta -->
                     <div class="card p-4">
-                        @include('profile.partials.delete-user-form')
-                    </div>
+                    @include('profile.partials.delete-user-form')
                 </div>
+            </div>
             </main>
         </div>
     </div>
