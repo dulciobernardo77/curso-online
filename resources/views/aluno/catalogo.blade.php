@@ -99,8 +99,8 @@
 
         .separator {
             height: 1px;
-            background-color: rgba(255, 255, 255, 0.05);
-            margin: 20px 0;
+            background-color: #20232b;
+            margin: 2rem 0;
         }
 
         .course-card {
@@ -172,14 +172,112 @@
         .text-secondary {
             color: #a8b0cf !important;
         }
+
+        /* Menu Hamburguer para Mobile */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1000;
+        }
+
+        .mobile-header {
+            display: none;
+            padding: 1rem;
+            background-color: var(--bg-color);
+            border-bottom: var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            @media (max-width: 768px) {
+                header .dropdown {
+                    display: none;
+                }
+            }
+            .menu-toggle {
+                display: inline-block;
+            }
+
+            aside {
+                position: fixed;
+                left: -250px;
+                top: 0;
+                height: 100vh;
+                z-index: 999;
+                background-color: var(--bg-color);
+                transition: left 0.3s ease;
+                width: 220px !important;
+                padding-top: 4rem !important;
+            }
+
+            aside.show {
+                left: 0;
+            }
+
+            main {
+                width: 100%;
+                margin-left: 0 !important;
+            }
+
+            .mobile-push {
+                margin-top: 0;
+            }
+
+            .course-filters {
+                flex-wrap: wrap;
+            }
+
+            .course-filters .btn {
+                margin-bottom: 0.5rem;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid px-0">
+    <!-- Cabeçalho mobile -->
+    <div class="mobile-header">
+        <button class="menu-toggle" id="menuToggle">
+            <i class="bi bi-list"></i>
+        </button>
+        <h3 class="fw-bold mb-0">SpaceSeat</h3>
+        <div class="dropdown">
+            <button class="btn btn-subtle dropdown-toggle" type="button" id="mobileProfileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="mobileProfileDropdown">
+                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">
+                    <i class="bi bi-person-circle me-2"></i>Meu Perfil
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="dropdown-item">
+                            <i class="bi bi-box-arrow-right me-2"></i>Sair
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid px-0 mobile-push">
         <div class="min-vh-100 d-flex">
             <!-- Barra lateral ultrassimplificada -->
-            <aside class="py-4 px-3" style="width: 180px;">
+            <aside class="py-4 px-3" style="width: 180px;" id="sidebar">
                 <div class="mb-5">
                     <h3 class="fw-bold mb-0">SpaceSeat</h3>
                 </div>
@@ -492,5 +590,25 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para o menu mobile -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebar = document.getElementById('sidebar');
+
+            menuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('show');
+            });
+
+            // Fechar o menu quando clicar fora dele em telas pequenas
+            document.addEventListener('click', function(event) {
+                const isClickInsideMenu = sidebar.contains(event.target) || menuToggle.contains(event.target);
+                if (!isClickInsideMenu && window.innerWidth <= 768 && sidebar.classList.contains('show')) {
+                    sidebar.classList.remove('show');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
