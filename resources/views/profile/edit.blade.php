@@ -245,7 +245,7 @@
                 <i class="bi bi-person"></i>
             </button>
             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="mobileProfileDropdown">
-                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">
+                <li><a class="dropdown-item" href="{{ route('aluno.perfil') }}">
                     <i class="bi bi-person-circle me-2"></i>Meu Perfil
                 </a></li>
                 <li><hr class="dropdown-divider"></li>
@@ -274,11 +274,11 @@
                         <i class="bi bi-house-door me-2"></i>
                         Home
                     </a>
-                    <a href="/jornada" class="nav-link mb-1">
+                    <a href="/aluno/jornada" class="nav-link mb-1">
                         <i class="bi bi-collection me-2"></i>
                         Jornada
                     </a>
-                    <a href="/catalogo" class="nav-link mb-1">
+                    <a href="/aluno/catalogo" class="nav-link mb-1">
                         <i class="bi bi-journal me-2"></i>
                         Catálogo
                     </a>
