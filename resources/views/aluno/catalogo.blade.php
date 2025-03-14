@@ -258,7 +258,7 @@
                 <i class="bi bi-person"></i>
             </button>
             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="mobileProfileDropdown">
-                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">
+                <li><a class="dropdown-item" href="{{ route('aluno.perfil') }}">
                     <i class="bi bi-person-circle me-2"></i>Meu Perfil
                 </a></li>
                 <li><hr class="dropdown-divider"></li>
