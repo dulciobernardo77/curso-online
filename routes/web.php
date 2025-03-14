@@ -40,6 +40,10 @@ Route::get('/aluno/catalogo', function () {
     return view('aluno.catalogo');
 })->middleware(['auth', 'verified'])->name('aluno.catalogo');
 
+Route::get('/aluno/perfil', function () {
+    return view('aluno.perfil');
+})->middleware(['auth', 'verified'])->name('aluno.perfil');
+
 Route::get('/aluno/teste', function () {
     return 'Rota de teste aluno funcionando!';
 });
