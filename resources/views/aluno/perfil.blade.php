@@ -32,62 +32,30 @@
         .card {
             background-color: var(--card-color);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            margin-bottom: 28px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            margin-bottom: 24px;
         }
 
-        .profile-header {
-            background: linear-gradient(to right, var(--accent-color), #8e6aff);
-            padding: 40px 0;
-            border-radius: 8px;
-            margin-bottom: 30px;
+        .profile-section {
+            padding: 32px;
+            border-radius: 12px;
+            background-color: var(--card-color);
         }
 
         .profile-avatar {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.2);
-            background-color: var(--card-color);
+            background-color: rgba(108, 71, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin-bottom: 24px;
         }
 
         .profile-avatar i {
-            font-size: 48px;
-            color: var(--text-secondary);
-        }
-
-        .progress-circle {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: conic-gradient(var(--accent-color) 0%, var(--accent-color) 40%, var(--card-color) 40%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-        }
-
-        .progress-circle-inner {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: var(--card-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        .stat-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
+            font-size: 32px;
+            color: var(--accent-color);
         }
 
         .nav-link {
@@ -118,12 +86,37 @@
             color: var(--accent-color);
         }
 
-        .text-secondary {
-            color: var(--text-secondary) !important;
+        .btn-edit {
+            color: var(--accent-color);
+            background-color: rgba(108, 71, 255, 0.1);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
         }
 
-        .fs-small {
-            font-size: 14px;
+        .btn-edit:hover {
+            background-color: rgba(108, 71, 255, 0.2);
+            color: var(--accent-color);
+        }
+
+        .progress {
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.06);
+            border-radius: 2px;
+        }
+
+        .progress-bar {
+            background-color: var(--accent-color);
+        }
+
+        .stat-item {
+            padding: 16px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.02);
         }
 
         /* Menu Hamburguer para Mobile */
@@ -245,101 +238,88 @@
 
             <!-- Conteúdo principal -->
             <main class="flex-grow-1 py-4 px-4">
-                <div class="mx-auto" style="max-width: 1000px;">
-                    <!-- Cabeçalho do perfil -->
-                    <div class="profile-header text-center">
-                        <div class="profile-avatar">
-                            <i class="bi bi-person"></i>
-                        </div>
-                        <h2 class="fw-bold mb-2">{{ Auth::user()->name }}</h2>
-                        <p class="text-white-50 mb-0">Aluno</p>
-                    </div>
+                <div class="mx-auto" style="max-width: 800px;">
+                    <!-- Cabeçalho -->
+                    <header class="d-flex justify-content-between align-items-center mb-4">
+                        <h1 class="fs-4 fw-bold m-0">Meu Perfil</h1>
+                        <a href="{{ route('profile.edit') }}" class="btn-edit">
+                            <i class="bi bi-pencil me-2"></i>Editar Perfil
+                        </a>
+                    </header>
 
-                    <!-- Estatísticas -->
-                    <div class="row g-4 mb-5">
-                        <div class="col-md-4">
-                            <div class="stat-card">
-                                <div class="progress-circle mb-3">
-                                    <div class="progress-circle-inner">
-                                        <h3 class="fw-bold mb-0">40%</h3>
-                                        <p class="text-secondary fs-small mb-0">Concluído</p>
+                    <!-- Seção Principal -->
+                    <div class="profile-section mb-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="profile-avatar">
+                                <i class="bi bi-person"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h2 class="fs-5 fw-bold mb-1">{{ Auth::user()->name }}</h2>
+                                <p class="text-secondary mb-0">{{ Auth::user()->email }}</p>
+                            </div>
+                        </div>
+
+                        <!-- Progresso -->
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-secondary">Progresso</span>
+                                        <span class="text-accent">40%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 40%"></div>
                                     </div>
                                 </div>
-                                <h5 class="mb-1">Progresso Geral</h5>
-                                <p class="text-secondary fs-small mb-0">2 de 5 cursos completos</p>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="stat-card">
-                                <i class="bi bi-clock text-accent mb-3" style="font-size: 2rem;"></i>
-                                <h5 class="mb-1">Tempo Total</h5>
-                                <p class="text-secondary fs-small mb-0">12 horas de estudo</p>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-clock text-accent me-2"></i>
+                                        <span class="text-secondary">12h estudadas</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="stat-card">
-                                <i class="bi bi-trophy text-accent mb-3" style="font-size: 2rem;"></i>
-                                <h5 class="mb-1">Certificados</h5>
-                                <p class="text-secondary fs-small mb-0">2 certificados obtidos</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Informações do Perfil -->
-                    <div class="card p-4 mb-4">
-                        <h5 class="mb-4">Informações Pessoais</h5>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <p class="text-secondary mb-1 fs-small">Nome</p>
-                                <p class="mb-0">{{ Auth::user()->name }}</p>
-                            </div>
-                            <div class="col-md-6">
-                                <p class="text-secondary mb-1 fs-small">Email</p>
-                                <p class="mb-0">{{ Auth::user()->email }}</p>
-                            </div>
-                            <div class="col-12">
-                                <a href="{{ route('profile.edit') }}" class="text-accent text-decoration-none fs-small">
-                                    <i class="bi bi-pencil me-2"></i>Editar Perfil
-                                </a>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-trophy text-accent me-2"></i>
+                                        <span class="text-secondary">2 certificados</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Cursos em Andamento -->
-                    <div class="card p-4">
-                        <h5 class="mb-4">Cursos em Andamento</h5>
+                    <div class="profile-section">
+                        <h3 class="fs-5 fw-bold mb-4">Cursos em Andamento</h3>
                         <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
-                                        style="width: 48px; height: 48px; background-color: rgba(108, 71, 255, 0.1);">
-                                        <i class="bi bi-code-slash text-accent"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">HTML & CSS Básico</h6>
-                                        <div class="progress" style="width: 150px; height: 4px;">
+                            <div class="col-12">
+                                <div class="d-flex align-items-center p-3" style="background: rgba(255,255,255,0.02); border-radius: 8px;">
+                                    <i class="bi bi-code-slash text-accent me-3" style="font-size: 24px;"></i>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h6 class="mb-0">HTML & CSS Básico</h6>
+                                            <span class="text-accent">60%</span>
+                                        </div>
+                                        <div class="progress">
                                             <div class="progress-bar" role="progressbar" style="width: 60%"></div>
                                         </div>
                                     </div>
-                                    <div class="ms-auto">
-                                        <span class="text-accent">60%</span>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
-                                        style="width: 48px; height: 48px; background-color: rgba(108, 71, 255, 0.1);">
-                                        <i class="bi bi-braces text-accent"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">JavaScript Fundamentos</h6>
-                                        <div class="progress" style="width: 150px; height: 4px;">
+                            <div class="col-12">
+                                <div class="d-flex align-items-center p-3" style="background: rgba(255,255,255,0.02); border-radius: 8px;">
+                                    <i class="bi bi-braces text-accent me-3" style="font-size: 24px;"></i>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h6 class="mb-0">JavaScript Fundamentos</h6>
+                                            <span class="text-accent">30%</span>
+                                        </div>
+                                        <div class="progress">
                                             <div class="progress-bar" role="progressbar" style="width: 30%"></div>
                                         </div>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="text-accent">30%</span>
                                     </div>
                                 </div>
                             </div>
