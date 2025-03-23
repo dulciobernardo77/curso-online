@@ -8,7 +8,10 @@ use App\Http\Controllers\WelcomeController;
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    if (auth()->user()->role === 'instrutor') {
+        return redirect()->route('instrutor.dashboard');
+    }
+    return view('aluno.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -32,17 +35,21 @@ Route::get('/auth/github', function () {
 
 Route::get('/auth/github/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGithubCallback']);
 
-Route::get('/aluno/jornada', function () {
-    return view('aluno.jornada');
-})->middleware(['auth', 'verified'])->name('aluno.jornada');
+Route::middleware(['auth', 'verified'])->prefix('aluno')->name('aluno.')->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\Aluno\DashboardController::class, 'index'])->name('dashboard');
+    
+    Route::get('/jornada', function () {
+        return view('aluno.jornada');
+    })->name('jornada');
 
-Route::get('/aluno/catalogo', function () {
-    return view('aluno.catalogo');
-})->middleware(['auth', 'verified'])->name('aluno.catalogo');
+    Route::get('/catalogo', function () {
+        return view('aluno.catalogo');
+    })->name('catalogo');
 
-Route::get('/aluno/perfil', function () {
-    return view('aluno.perfil');
-})->middleware(['auth', 'verified'])->name('aluno.perfil');
+    Route::get('/perfil', function () {
+        return view('aluno.perfil');
+    })->name('perfil');
+});
 
 Route::get('/aluno/teste', function () {
     return 'Rota de teste aluno funcionando!';
@@ -50,4 +57,56 @@ Route::get('/aluno/teste', function () {
 
 Route::get('/teste', function () {
     return 'Rota de teste funcionando!';
+});
+
+// Rotas do Instrutor
+Route::middleware(['web', 'auth'])->group(function () {
+    Route::middleware(\App\Http\Middleware\CheckRole::class . ':instrutor')->prefix('instrutor')->name('instrutor.')->group(function () {
+        // Dashboard do Instrutor
+        Route::get('/', [App\Http\Controllers\Instrutor\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard', [App\Http\Controllers\Instrutor\DashboardController::class, 'index'])->name('dashboard');
+
+        // Rotas de Cursos
+        Route::get('/cursos', [App\Http\Controllers\Instrutor\CursoController::class, 'index'])->name('cursos.index');
+        Route::get('/cursos/criar', [App\Http\Controllers\Instrutor\CursoController::class, 'create'])->name('cursos.create');
+        Route::post('/cursos', [App\Http\Controllers\Instrutor\CursoController::class, 'store'])->name('cursos.store');
+        Route::get('/cursos/{curso}', [App\Http\Controllers\Instrutor\CursoController::class, 'show'])->name('cursos.show');
+        Route::get('/cursos/{curso}/edit', [App\Http\Controllers\Instrutor\CursoController::class, 'edit'])->name('cursos.edit');
+        Route::put('/cursos/{curso}', [App\Http\Controllers\Instrutor\CursoController::class, 'update'])->name('cursos.update');
+        Route::delete('/cursos/{curso}', [App\Http\Controllers\Instrutor\CursoController::class, 'destroy'])->name('cursos.destroy');
+    });
+});
+
+// Rotas do Admin
+Route::middleware(['web', 'auth'])->group(function () {
+    Route::middleware(\App\Http\Middleware\CheckRole::class . ':admin')->prefix('admin')->name('admin.')->group(function () {
+        // Dashboard do Admin
+        Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+        
+        // Outras rotas do admin
+        Route::get('/usuarios', function () {
+            return view('admin.usuarios');
+        })->name('usuarios');
+        
+        Route::get('/cursos', function () {
+            return view('admin.cursos');
+        })->name('cursos');
+        
+        Route::get('/categorias', function () {
+            return view('admin.categorias');
+        })->name('categorias');
+        
+        Route::get('/financeiro', function () {
+            return view('admin.financeiro');
+        })->name('financeiro');
+        
+        Route::get('/relatorios', function () {
+            return view('admin.relatorios');
+        })->name('relatorios');
+        
+        Route::get('/configuracoes', function () {
+            return view('admin.configuracoes');
+        })->name('configuracoes');
+    });
 });
