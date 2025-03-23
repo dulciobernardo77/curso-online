@@ -7,9 +7,21 @@ use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+    use AuthenticatesUsers;
+
+    protected $redirectTo = RouteServiceProvider::HOME;
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
     public function handleGoogleCallback()
     {
         try {
@@ -60,5 +72,14 @@ class LoginController extends Controller
         } catch (Exception $e) {
             return redirect('login')->with('error', 'Algo deu errado com o login do GitHub');
         }
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->role === 'instrutor') {
+            return redirect()->route('instrutor.dashboard');
+        }
+        
+        return redirect()->route('aluno.dashboard');
     }
 }
