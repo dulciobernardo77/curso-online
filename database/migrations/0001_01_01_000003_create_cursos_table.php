@@ -10,10 +10,15 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->decimal('price', 8, 2);
             $table->string('image');
             $table->string('category');
+            $table->text('objectives');
+            $table->text('requirements');
+            $table->integer('duration_hours');
+            $table->integer('level'); // 1: Iniciante, 2: Intermediário, 3: Avançado
             $table->boolean('featured')->default(false);
+            $table->boolean('published')->default(false);
+            $table->foreignId('instructor_id')->constrained('users');
             $table->timestamps();
         });
     }
