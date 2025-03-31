@@ -7,6 +7,10 @@ use App\Http\Controllers\WelcomeController;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
+Route::get('/about', function () {
+    return view('about.index');
+})->name('about');
+
 Route::get('/dashboard', function () {
     if (auth()->user()->role === 'instrutor') {
         return redirect()->route('instrutor.dashboard');
