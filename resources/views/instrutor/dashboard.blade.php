@@ -47,9 +47,9 @@
             background-color: var(--accent-color);
             color: white;
             border: none;
-            border-radius: 4px;
             padding: 6px 12px;
             font-size: 14px;
+            border-radius: 4px;
         }
 
         .btn-accent:hover {
@@ -103,17 +103,17 @@
 
         .fw-medium {
             font-weight: 500;
-            color: #ffffff;
         }
 
+        /* Menu mobile */
         .menu-toggle {
             display: none;
             background: none;
             border: none;
             color: var(--text-color);
             font-size: 1.5rem;
-            cursor: pointer;
             padding: 0.5rem;
+            cursor: pointer;
             z-index: 1000;
         }
 
@@ -307,10 +307,11 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="fs-6 fw-medium mb-4">Atividade Recente</h4>
-                            <p class="text-secondary text-center py-4 mb-0">
-                                <i class="bi bi-info-circle me-2"></i>
-                                Nenhuma atividade recente para exibir
-                            </p>
+                            <div class="text-center py-4">
+                                <i class="bi bi-info-circle fs-3 text-secondary mb-3 d-block"></i>
+                                <p class="text-secondary mb-2">Nenhuma atividade recente para exibir</p>
+                                <small class="text-white-50">As atividades recentes aparecerão aqui quando você criar cursos ou interagir com a plataforma</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -326,9 +327,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menuToggle');
             const sidebar = document.getElementById('sidebar');
+            const navLinks = document.querySelectorAll('#sidebar .nav-link');
 
+            // Alternar o menu ao clicar no botão
             menuToggle.addEventListener('click', function() {
                 sidebar.classList.toggle('show');
+            });
+
+            // Fechar o menu quando clicar em um link de navegação em telas pequenas
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.remove('show');
+                    }
+                });
             });
 
             // Fechar o menu quando clicar fora dele em telas pequenas
