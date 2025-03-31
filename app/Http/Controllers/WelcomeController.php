@@ -20,42 +20,36 @@ class WelcomeController extends Controller
                 'category' => 'Desenvolvimento Web',
                 'title' => 'Desenvolvimento Full Stack',
                 'description' => 'Aprenda a criar aplicações web completas com as tecnologias mais modernas.',
-                'price' => 'free'
             ],
             (object)[
                 'image' => '/images/user1.webp',
                 'category' => 'Data Science',
                 'title' => 'Ciência de Dados',
                 'description' => 'Domine análise de dados, machine learning e visualização de dados.',
-                'price' => 'free'
             ],
             (object)[
                 'image' => '/images/user1.webp',
                 'category' => 'Mobile',
                 'title' => 'Desenvolvimento Mobile',
                 'description' => 'Crie aplicativos móveis modernos para iOS e Android.',
-                'price' => 'free'
             ],
             (object)[
                 'image' => '/images/user1.webp',
                 'category' => 'Desenvolvimento Web',
                 'title' => 'Desenvolvimento Full Stack',
                 'description' => 'Aprenda a criar aplicações web completas com as tecnologias mais modernas.',
-                'price' => 'free'
             ],
             (object)[
                 'image' => '/images/user1.webp',
                 'category' => 'JavaScript',
                 'title' => 'Fundamentos de Javascript',
                 'description' => 'Domine O fundamentos do js.aprenda a cria aplicacoes web interativas e modernais',
-                'price' => 'free'
             ],
             (object)[
                 'image' => '/images/user1.webp',
                 'category' => 'Mobile',
                 'title' => 'Desenvolvimento Mobile',
                 'description' => 'Crie aplicativos móveis modernos para iOS e Android.',
-                'price' => 'free'
             ]
         ];
 
