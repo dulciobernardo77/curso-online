@@ -49,6 +49,26 @@ Route::middleware(['auth', 'verified'])->prefix('aluno')->name('aluno.')->group(
     Route::get('/perfil', function () {
         return view('aluno.perfil');
     })->name('perfil');
+    
+    Route::get('/progresso', function () {
+        return view('aluno.progresso');
+    })->name('progresso');
+    
+    Route::get('/notificacoes', function () {
+        return view('aluno.notificacoes');
+    })->name('notificacoes');
+    
+    Route::get('/certificados', function () {
+        return view('aluno.certificados');
+    })->name('certificados');
+    
+    Route::get('/avaliacoes', function () {
+        return view('aluno.avaliacoes');
+    })->name('avaliacoes');
+    
+    Route::get('/curso/{curso}', [App\Http\Controllers\Aluno\CursoController::class, 'show'])->name('curso');
+    
+    Route::get('/aula/{aula}', [App\Http\Controllers\Aluno\AulaController::class, 'show'])->name('aula');
 });
 
 Route::get('/aluno/teste', function () {

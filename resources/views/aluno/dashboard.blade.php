@@ -93,10 +93,29 @@
             opacity: 0.7;
         }
 
+        .fs-small {
+            font-size: 13px;
+        }
+
+        .separator {
+            height: 1px;
+            background-color: #20232b;
+            margin: 2rem 0;
+        }
+
+        .course-card {
+            transition: all 0.2s;
+            height: 100%;
+        }
+
+        .course-card:hover {
+            transform: translateY(-2px);
+        }
+
         .progress {
-            height: 4px;
-            background-color: rgba(255, 255, 255, 0.06);
-            border-radius: 2px;
+            height: 6px;
+            background-color: var(--bg-color);
+            border-radius: 3px;
             overflow: hidden;
         }
 
@@ -104,27 +123,56 @@
             background-color: var(--accent-color);
         }
 
-        .course-item {
-            transition: all 0.2s;
+        .coming-soon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
         }
 
-        .course-item:hover {
-            transform: translateY(-1px);
+        .welcome-card {
+            background: linear-gradient(45deg, #2d2258, #6c47ff);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
         }
 
-        .fs-small {
-            font-size: 0.75rem;
+        .welcome-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjUwIiByPSI4MCIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpIi8+CjxjaXJjbGUgY3g9IjE4MCIgY3k9IjgwIiByPSI0MCIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPgo8L3N2Zz4=');
+            background-repeat: no-repeat;
+            background-position: center;
+            pointer-events: none;
         }
 
-        .text-secondary {
-            color: #a8b0cf !important;
+        .stats-card {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-color);
+            border-radius: 6px;
+            padding: 1rem;
         }
 
-        .fw-medium {
-            font-weight: 500;
-            color: #ffffff;
+        .stats-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 1rem;
         }
 
+        /* Menu Hamburguer para Mobile */
         .menu-toggle {
             display: none;
             background: none;
@@ -153,6 +201,10 @@
                 justify-content: space-between;
             }
 
+            header .dropdown {
+                display: none;
+            }
+
             .menu-toggle {
                 display: inline-block;
             }
@@ -177,6 +229,10 @@
                 width: 100%;
                 margin-left: 0 !important;
             }
+
+            .mobile-push {
+                margin-top: 0;
+            }
         }
     </style>
 </head>
@@ -188,10 +244,10 @@
         </button>
         <h3 class="fw-bold mb-0">SpaceSeat</h3>
         <div class="dropdown">
-            <button class="btn btn-subtle dropdown-toggle" type="button" id="mobileProfileDropdown" data-bs-toggle="dropdown">
+            <button class="btn btn-subtle dropdown-toggle" type="button" id="mobileProfileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-person"></i>
             </button>
-            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="mobileProfileDropdown">
                 <li><a class="dropdown-item" href="{{ route('aluno.perfil') }}">
                     <i class="bi bi-person-circle me-2"></i>Meu Perfil
                 </a></li>
@@ -208,9 +264,9 @@
         </div>
     </div>
 
-    <div class="container-fluid px-0">
+    <div class="container-fluid px-0 mobile-push">
         <div class="min-vh-100 d-flex">
-            <!-- Barra lateral -->
+            <!-- Barra lateral ultrassimplificada -->
             <aside class="py-4 px-3" style="width: 180px;" id="sidebar">
                 <div class="mb-5">
                     <h3 class="fw-bold mb-0">SpaceSeat</h3>
@@ -234,15 +290,19 @@
 
             <!-- Conteúdo principal -->
             <main class="flex-grow-1 py-4 px-4">
-                <div class="mx-auto" style="max-width: 800px;">
-                    <!-- Cabeçalho -->
+                <div class="mx-auto" style="max-width: 1000px;">
+                    <!-- Cabeçalho simplificado -->
                     <header class="mb-5 d-flex justify-content-between align-items-center">
-                        <h1 class="fs-5 fw-medium m-0">Olá {{ Auth::user()->name }}</h1>
+                        <div>
+                            <h1 class="fs-5 fw-medium m-0">Dashboard</h1>
+                            <p class="text-secondary fs-small mt-1 mb-0">Bem-vindo de volta</p>
+                        </div>
                         <div class="dropdown">
-                            <button class="btn btn-subtle dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown">
+                            <button class="btn btn-subtle dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ Auth::user()->name }}
                                 <i class="bi bi-person"></i>
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="profileDropdown">
                                 <li><a class="dropdown-item" href="{{ route('aluno.perfil') }}">
                                     <i class="bi bi-person-circle me-2"></i>Meu Perfil
                                 </a></li>
@@ -259,97 +319,258 @@
                         </div>
                     </header>
 
-                    <!-- Progresso -->
+                    <!-- Card de boas-vindas -->
+                    <div class="welcome-card p-4 mb-5">
+                        <div style="max-width: 60%;">
+                            <h2 class="fw-bold mb-2">Olá, {{ Auth::user()->name }}!</h2>
+                            <p class="mb-3">Continue de onde parou e expanda seus conhecimentos hoje.</p>
+                            <a href="/aluno/jornada" class="btn btn-light btn-sm">
+                                <i class="bi bi-play-fill me-1"></i>
+                                Continuar Aprendendo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Estatísticas rápidas -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-4">
+                            <div class="stats-card">
+                                <div class="stats-icon" style="background-color: rgba(108, 71, 255, 0.1);">
+                                    <i class="bi bi-book text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0 text-secondary fs-small">Cursos em andamento</p>
+                                    <p class="fw-medium mb-0">{{ $cursosEmAndamento ?? 3 }} cursos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stats-card">
+                                <div class="stats-icon" style="background-color: rgba(52, 199, 89, 0.1);">
+                                    <i class="bi bi-check-circle text-success"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0 text-secondary fs-small">Cursos concluídos</p>
+                                    <p class="fw-medium mb-0">{{ $cursosConcluidos ?? 5 }} cursos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stats-card">
+                                <div class="stats-icon" style="background-color: rgba(255, 179, 0, 0.1);">
+                                    <i class="bi bi-lightning-charge text-warning"></i>
+                                    </div>
+                                <div>
+                                    <p class="mb-0 text-secondary fs-small">Sequência de estudo</p>
+                                    <p class="fw-medium mb-0">{{ $streak ?? 7 }} dias</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continue Aprendendo -->
                     <div class="mb-5">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <p class="m-0 text-secondary fs-small">PROGRESSO DA TRILHA</p>
-                            <p class="m-0 fs-small">40%</p>
+                            <p class="text-secondary fs-small mb-0">CONTINUE APRENDENDO</p>
+                            <a href="/aluno/jornada" class="text-accent" style="font-size: 14px; text-decoration: none;">
+                                Ver Todos
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 40%"></div>
-                        </div>
-                    </div>
 
-                    <!-- Curso atual -->
-                    <div class="mb-5">
-                        <p class="text-secondary fs-small mb-3">CONTINUE APRENDENDO</p>
-
-                        <div class="card p-4 course-item">
-                            <div class="d-flex align-items-center">
-                                <div class="me-3 d-flex align-items-center justify-content-center rounded-circle"
-                                    style="width: 36px; height: 36px; background-color: rgba(108, 71, 255, 0.1);">
-                                    <i class="bi bi-play-fill text-accent"></i>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <p class="fw-medium mb-1">React JS: Componentes e Estado</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="fs-small text-secondary">65% concluído</div>
-                                        <a href="#" class="btn-accent text-decoration-none">Continuar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Resumo -->
                     <div class="row g-4">
-                        <div class="col-md-6">
-                            <p class="text-secondary fs-small mb-3">SEU PROGRESSO</p>
-
-                            <div class="card p-4">
-                                <div class="mb-2">
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-secondary">Cursos em andamento</span>
-                                        <span>3</span>
+                            @if(!empty($cursos) && count($cursos) > 0)
+                                @foreach($cursos as $curso)
+                                <!-- Curso em progresso -->
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card course-card p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 40px; height: 40px; background-color: rgba(108, 71, 255, 0.1);">
+                                                <i class="bi bi-{{ $curso->icon ?? 'code-slash' }} text-accent"></i>
+                                            </div>
+                                            <div>
+                                                <p class="fw-medium mb-0">{{ $curso->title }}</p>
+                                                <p class="text-secondary fs-small mb-0">Módulo {{ $curso->current_module }} de {{ $curso->total_modules }}</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-secondary fs-small mb-2">Progresso: {{ $curso->progress }}%</p>
+                                        <div class="progress mb-3">
+                                            <div class="progress-bar" role="progressbar" style="width: {{ $curso->progress }}%"></div>
+                                        </div>
+                                        <a href="{{ route('aluno.curso', $curso->id) }}" class="btn-accent text-decoration-none text-center">
+                                            <i class="bi bi-play-fill me-2"></i>
+                                            Continuar
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="mb-2">
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-secondary">Cursos concluídos</span>
-                                        <span>12</span>
+                                @endforeach
+                            @else
+                                <!-- Curso em progresso 1 (Fallback) -->
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card course-card p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 40px; height: 40px; background-color: rgba(108, 71, 255, 0.1);">
+                                                <i class="bi bi-code-slash text-accent"></i>
+                                            </div>
+                                            <div>
+                                                <p class="fw-medium mb-0">Desenvolvimento Web</p>
+                                                <p class="text-secondary fs-small mb-0">Módulo 3 de 5</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-secondary fs-small mb-2">Progresso: 68%</p>
+                                        <div class="progress mb-3">
+                                            <div class="progress-bar" role="progressbar" style="width: 68%"></div>
+                                        </div>
+                                        <a href="#" class="btn-accent text-decoration-none text-center">
+                                            <i class="bi bi-play-fill me-2"></i>
+                                            Continuar
+                                        </a>
                                     </div>
+                                </div>
+
+                                <!-- Curso em progresso 2 (Fallback) -->
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card course-card p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 40px; height: 40px; background-color: rgba(255, 71, 148, 0.1);">
+                                                <i class="bi bi-palette text-danger"></i>
+                                            </div>
+                                            <div>
+                                                <p class="fw-medium mb-0">Design UI/UX</p>
+                                                <p class="text-secondary fs-small mb-0">Módulo 2 de 6</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-secondary fs-small mb-2">Progresso: 35%</p>
+                                        <div class="progress mb-3">
+                                            <div class="progress-bar" role="progressbar" style="width: 35%"></div>
+                                        </div>
+                                        <a href="#" class="btn-accent text-decoration-none text-center">
+                                            <i class="bi bi-play-fill me-2"></i>
+                                            Continuar
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Curso em progresso 3 (Fallback) -->
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card course-card p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 40px; height: 40px; background-color: rgba(52, 199, 89, 0.1);">
+                                                <i class="bi bi-megaphone text-success"></i>
                                 </div>
                                 <div>
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-secondary">Tempo estudado</span>
-                                        <span>45h</span>
+                                                <p class="fw-medium mb-0">Marketing Digital</p>
+                                                <p class="text-secondary fs-small mb-0">Módulo 1 de 8</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-secondary fs-small mb-2">Progresso: 12%</p>
+                                        <div class="progress mb-3">
+                                            <div class="progress-bar" role="progressbar" style="width: 12%"></div>
+                                        </div>
+                                        <a href="#" class="btn-accent text-decoration-none text-center">
+                                            <i class="bi bi-play-fill me-2"></i>
+                                            Continuar
+                                        </a>
                                     </div>
+                                </div>
+                            @endif
                                 </div>
                             </div>
+
+                    <div class="separator"></div>
+
+                    <!-- Eventos e aulas ao vivo próximas -->
+                    <div class="mb-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="text-secondary fs-small mb-0">PRÓXIMOS EVENTOS</p>
+                            <a href="/aluno/calendario" class="text-accent" style="font-size: 14px; text-decoration: none;">
+                                Ver Calendário
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
                         </div>
 
+                        <div class="row g-4">
+                            @if(!empty($eventos) && count($eventos) > 0)
+                                @foreach($eventos as $evento)
+                                <!-- Evento -->
                         <div class="col-md-6">
-                            <p class="text-secondary fs-small mb-3">PRÓXIMOS CURSOS</p>
-
-                            <div class="card p-4">
-                                <div class="mb-3">
-                                    <div class="d-flex">
-                                        <span class="text-secondary me-2">4.</span>
-                                        <span>Node.js Básico</span>
+                                    <div class="card course-card p-4">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 40px; height: 40px; background-color: rgba(108, 71, 255, 0.1);">
+                                                    <i class="bi bi-{{ $evento->icon ?? 'calendar-event' }} text-accent"></i>
+                                                </div>
+                                                <div>
+                                                    <p class="fw-medium mb-0">{{ $evento->title }}</p>
+                                                    <p class="text-secondary fs-small mb-0">{{ $evento->date }}</p>
+                                                </div>
+                                            </div>
+                                            @if($evento->live ?? false)
+                                            <span class="badge bg-danger">Ao Vivo</span>
+                                            @endif
+                                        </div>
+                                        <p class="text-secondary fs-small mb-3">{{ $evento->description }}</p>
+                                        <a href="{{ $evento->url ?? '#' }}" class="btn-accent text-decoration-none text-center">
+                                            <i class="bi bi-calendar-check me-2"></i>
+                                            Participar
+                                        </a>
                                     </div>
+                                </div>
+                                @endforeach
+                            @else
+                                <!-- Evento 1 (Fallback) -->
+                                <div class="col-md-6">
+                                    <div class="card course-card p-4">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 40px; height: 40px; background-color: rgba(108, 71, 255, 0.1);">
+                                                    <i class="bi bi-camera-video text-accent"></i>
                                 </div>
                                 <div>
-                                    <div class="d-flex">
-                                        <span class="text-secondary me-2">5.</span>
-                                        <span>Express.js e APIs</span>
+                                                    <p class="fw-medium mb-0">Workshop: Introdução ao React</p>
+                                                    <p class="text-secondary fs-small mb-0">Amanhã, 19:00</p>
+                                                </div>
+                                            </div>
+                                            <span class="badge bg-danger">Ao Vivo</span>
+                                        </div>
+                                        <p class="text-secondary fs-small mb-3">Aprenda os fundamentos do React e construa sua primeira aplicação com o instrutor João Silva.</p>
+                                        <a href="#" class="btn-accent text-decoration-none text-center">
+                                            <i class="bi bi-calendar-check me-2"></i>
+                                            Participar
+                                        </a>
                                     </div>
                                 </div>
+
+                                <!-- Evento 2 (Fallback) -->
+                                <div class="col-md-6">
+                                    <div class="card course-card p-4">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 40px; height: 40px; background-color: rgba(255, 179, 0, 0.1);">
+                                                    <i class="bi bi-people text-warning"></i>
+                                                </div>
+                                                <div>
+                                                    <p class="fw-medium mb-0">Desafio de Código: Backend</p>
+                                                    <p class="text-secondary fs-small mb-0">Sexta-feira, 20:00</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Link para jornada -->
-                    <div class="text-center mt-4">
-                        <a href="/aluno/jornada" class="text-accent text-decoration-none">
-                            Ver jornada completa <i class="bi bi-arrow-right ms-1"></i>
-                        </a>
+                                        <p class="text-secondary fs-small mb-3">Participe do nosso desafio semanal e resolva problemas práticos de desenvolvimento backend.</p>
+                                        <a href="#" class="btn-accent text-decoration-none text-center">
+                                            <i class="bi bi-calendar-check me-2"></i>
+                                            Participar
+                                        </a>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </main>
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap JS Bundle com Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Script para o menu mobile -->
