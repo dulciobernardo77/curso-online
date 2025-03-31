@@ -336,15 +336,109 @@
                                 <div class="position-relative">
                                     <i class="bi bi-search position-absolute"
                                     style="left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-secondary)"></i>
-                                    <input type="text" class="search-input ps-4" placeholder="Buscar cursos...">
+                                    <input type="text" class="search-input ps-4" id="searchCourses" placeholder="Buscar cursos...">
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="d-flex gap-2">
-                                    <button class="filter-btn flex-grow-1 active">Todos</button>
-                                    <button class="filter-btn flex-grow-1">Tecnologia</button>
-                                    <button class="filter-btn flex-grow-1">Design</button>
-                                    <button class="filter-btn flex-grow-1">Negócios</button>
+                            <div class="col-md-4 text-end">
+                                <button class="filter-btn" data-bs-toggle="modal" data-bs-target="#filterModal">
+                                    <i class="bi bi-funnel me-2"></i>Filtros Avançados
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Filtros rápidos -->
+                        <div class="d-flex gap-2 flex-wrap mt-3">
+                            <button class="filter-btn active" data-category="all">Todos</button>
+                            <button class="filter-btn" data-category="tech">Tecnologia</button>
+                            <button class="filter-btn" data-category="design">Design</button>
+                            <button class="filter-btn" data-category="business">Negócios</button>
+                            <button class="filter-btn" data-category="marketing">Marketing</button>
+                            <button class="filter-btn" data-category="personal">Desenvolvimento Pessoal</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal de Filtros Avançados -->
+                    <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content bg-dark text-light border-0">
+                                <div class="modal-header border-bottom border-secondary">
+                                    <h5 class="modal-title fs-6" id="filterModalLabel">Filtros Avançados</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="advancedFilterForm">
+                                        <div class="mb-3">
+                                            <label class="form-label text-secondary fs-small">Categoria</label>
+                                            <select class="form-select bg-dark text-light border-secondary">
+                                                <option value="">Todas as categorias</option>
+                                                <option value="tech">Tecnologia</option>
+                                                <option value="design">Design</option>
+                                                <option value="business">Negócios</option>
+                                                <option value="marketing">Marketing</option>
+                                                <option value="personal">Desenvolvimento Pessoal</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label text-secondary fs-small">Nível</label>
+                                            <div class="d-flex gap-2 flex-wrap">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="beginner" id="levelBeginner">
+                                                    <label class="form-check-label text-light" for="levelBeginner">
+                                                        Iniciante
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="intermediate" id="levelIntermediate">
+                                                    <label class="form-check-label text-light" for="levelIntermediate">
+                                                        Intermediário
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="advanced" id="levelAdvanced">
+                                                    <label class="form-check-label text-light" for="levelAdvanced">
+                                                        Avançado
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label text-secondary fs-small">Duração</label>
+                                            <div class="d-flex gap-2 flex-wrap">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="short" id="durationShort">
+                                                    <label class="form-check-label text-light" for="durationShort">
+                                                        Curta (< 5h)
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="medium" id="durationMedium">
+                                                    <label class="form-check-label text-light" for="durationMedium">
+                                                        Média (5-15h)
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="long" id="durationLong">
+                                                    <label class="form-check-label text-light" for="durationLong">
+                                                        Longa (> 15h)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label text-secondary fs-small">Classificação</label>
+                                            <div class="d-flex align-items-center">
+                                                <input type="range" class="form-range" min="1" max="5" step="1" id="ratingRange" value="3">
+                                                <span class="ms-2 text-light" id="ratingValue">3+</span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer border-top border-secondary">
+                                    <button type="button" class="btn btn-subtle" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-accent" id="applyFilters">Aplicar Filtros</button>
                                 </div>
                             </div>
                         </div>
@@ -571,14 +665,97 @@
                                             <p class="fw-medium mb-0">Oratória e Comunicação</p>
                                             <p class="text-secondary fs-small mb-0">6h • Iniciante</p>
                                         </div>
+                                        <button class="btn btn-subtle ms-auto favorite-btn" title="Favoritar">
+                                            <i class="bi bi-heart"></i>
+                                        </button>
                                     </div>
                                     <p class="text-secondary fs-small mb-3">
                                         Desenvolva suas habilidades de comunicação e apresentação em público.
                                     </p>
-                                    <a href="#" class="btn-accent text-decoration-none text-center">
-                                        <i class="bi bi-play-fill me-2"></i>
-                                        Iniciar Curso
-                                    </a>
+                                    <div class="d-flex gap-2">
+                                        <a href="#" class="btn-accent text-decoration-none text-center flex-grow-1">
+                                            <i class="bi bi-play-fill me-2"></i>
+                                            Iniciar Curso
+                                        </a>
+                                        <a href="#" class="btn-subtle text-decoration-none" data-bs-toggle="modal" data-bs-target="#previewModal">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal de Preview do Curso -->
+                    <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content bg-dark text-light border-0">
+                                <div class="modal-header border-bottom border-secondary">
+                                    <h5 class="modal-title" id="previewModalLabel">Preview do Curso</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="ratio ratio-16x9 mb-3">
+                                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Preview do curso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h4 class="fs-5 fw-medium">Oratória e Comunicação</h4>
+                                            <p class="text-secondary fs-small">Por João Silva • Atualizado há 2 meses</p>
+                                            
+                                            <div class="mb-3">
+                                                <span class="d-flex align-items-center text-warning fs-small mb-1">
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-half"></i>
+                                                    <span class="ms-2 text-light">4.5</span>
+                                                    <span class="ms-2 text-secondary">(128 avaliações)</span>
+                                                </span>
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <p class="text-secondary fs-small mb-1">O que você vai aprender:</p>
+                                                <ul class="fs-small text-light ps-3">
+                                                    <li>Técnicas para eliminar o medo de falar em público</li>
+                                                    <li>Como estruturar apresentações persuasivas</li>
+                                                    <li>Linguagem corporal e expressão vocal</li>
+                                                    <li>Estratégias para engajar diferentes públicos</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <p class="text-secondary fs-small mb-1">Conteúdo do curso:</p>
+                                        <div class="card bg-dark border border-secondary p-2 mb-2">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <p class="mb-0 fw-medium">1. Introdução à Oratória</p>
+                                                    <p class="mb-0 text-secondary fs-small">45 min • 3 aulas</p>
+                                                </div>
+                                                <button class="btn btn-subtle"><i class="bi bi-chevron-down"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-dark border border-secondary p-2 mb-2">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <p class="mb-0 fw-medium">2. Estrutura da Apresentação</p>
+                                                    <p class="mb-0 text-secondary fs-small">1h 30min • 5 aulas</p>
+                                                </div>
+                                                <button class="btn btn-subtle"><i class="bi bi-chevron-down"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer border-top border-secondary">
+                                    <button type="button" class="btn btn-subtle" data-bs-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-accent">
+                                        <i class="bi bi-play-fill me-2"></i>Iniciar Curso
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -596,7 +773,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menuToggle');
             const sidebar = document.getElementById('sidebar');
-
+            
+            // Menu mobile
             menuToggle.addEventListener('click', function() {
                 sidebar.classList.toggle('show');
             });
@@ -608,6 +786,51 @@
                     sidebar.classList.remove('show');
                 }
             });
+            
+            // Filtros rápidos
+            const filterButtons = document.querySelectorAll('.filter-btn[data-category]');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    // Aqui implementaria a filtragem dos cursos
+                });
+            });
+            
+            // Favoritar cursos
+            const favoriteButtons = document.querySelectorAll('.favorite-btn');
+            favoriteButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('bi-heart')) {
+                        icon.classList.remove('bi-heart');
+                        icon.classList.add('bi-heart-fill');
+                        icon.style.color = 'var(--accent-color)';
+                    } else {
+                        icon.classList.remove('bi-heart-fill');
+                        icon.classList.add('bi-heart');
+                        icon.style.color = '';
+                    }
+                });
+            });
+            
+            // Range de classificação
+            const ratingRange = document.getElementById('ratingRange');
+            const ratingValue = document.getElementById('ratingValue');
+            if (ratingRange && ratingValue) {
+                ratingRange.addEventListener('input', function() {
+                    ratingValue.textContent = this.value + '+';
+                });
+            }
+            
+            // Sistema de busca
+            const searchInput = document.getElementById('searchCourses');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    // Aqui implementaria a busca em tempo real
+                    console.log('Buscando: ' + this.value);
+                });
+            }
         });
     </script>
 </body>
