@@ -19,8 +19,43 @@
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-3" style="background-color: #0a0c12; position: fixed; width: 100%; z-index: 1000;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">SpaceSeat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('about') }}">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Cursos</a>
+                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">Registrar</a>
+                        </li>
+                    @endauth
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
     <!-- Hero Section -->
-    <section class="hero-section position-relative overflow-hidden">
+    <section class="hero-section position-relative overflow-hidden" style="padding-top: 80px;">
         <div class="h-100 container">
             <div class="row align-items-center justify-content-between h-100">
                 <div class="col-lg-6 hero-content text-start">
@@ -33,8 +68,8 @@
                         <span class="gradient-text">Conquiste seu futuro.</span>
                     </h1>
                     <p class="lead text-white-50 mb-5">
-                        Junte-se a mais de 50.000 alunos transformando suas carreiras
-                        com cursos práticos e certificados reconhecidos pelo mercado.
+                        Acesse cursos gratuitos criados por estudantes e professores. 
+                        Aprenda no seu ritmo com nossa plataforma educacional.
                     </p>
                     <div class="d-flex gap-3">
                         <a href="{{ route('login') }}" class="btn btn-primary btn-lg px-5">
@@ -122,7 +157,7 @@
             <div class="mb-5 text-center">
                 <span class="text-primary">Nossos Cursos</span>
                 <h2 class="display-5 fw-bold mt-2">Cursos em Destaque</h2>
-                <p class="text-white-50">Explore nossos cursos mais populares e bem avaliados</p>
+                <p class="text-white-50">Explore nossos cursos educacionais gratuitos</p>
             </div>
 
             <div class="row g-4">
@@ -131,11 +166,10 @@
                         <div class="course-card">
                             <img src="{{ $course->image }}" alt="{{ $course->title }}" class="img-fluid">
                             <div class="p-4">
-                                <!--<span-- class="badge bg-primary mb-2">{{ $course->category }}</span-->
                                 <h4>{{ $course->title }}</h4>
                                 <p class="text-white-50">{{ $course->description }}</p>
                                 <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <span class="text-primary">Kz {{ $course->price }}</span>
+                                    <span class="text-primary">Gratuito</span>
                                     <a href="{{Route('login')}}" class="btn btn-outline-primary">Saiba Mais</a>
                                 </div>
                             </div>
@@ -146,45 +180,45 @@
         </div>
     </section>
 
-    <!-- Discord Community Section -->
+    <!-- Comunidade de Estudantes Section -->
     <section class="discord-community-section section-padding position-relative overflow-hidden">
         <div class="discord-glow"></div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 pe-lg-5 mb-5 mb-lg-0">
                     <span class="badge bg-discord mb-3 animate__animated animate__fadeInUp">
-                        <i class="bi bi-discord me-2"></i>
-                        Comunidade Ativa
+                        <i class="bi bi-people-fill me-2"></i>
+                        Ambiente Colaborativo
                     </span>
                     <h2 class="display-5 fw-bold mb-4 animate__animated animate__fadeInUp animate__delay-1s">
                         Junte-se à nossa<br>
-                        <span class="text-discord">Comunidade Discord</span>
+                        <span class="text-discord">Comunidade de Estudantes</span>
                     </h2>
                     <p class="lead text-white-50 mb-4 animate__animated animate__fadeInUp animate__delay-2s">
-                        Conecte-se com outros estudantes, compartilhe conhecimento e participe de eventos exclusivos. Nossa comunidade está sempre ativa e pronta para ajudar!
+                        Conecte-se com outros estudantes, compartilhe conhecimento e participe de atividades em grupo para um aprendizado colaborativo.
                     </p>
                     <div class="discord-stats d-flex gap-5 mb-5 animate__animated animate__fadeInUp animate__delay-3s">
                         <div class="discord-stat">
-                            <h3 class="text-discord fw-bold">2,500+</h3>
-                            <p class="text-white-50">Membros</p>
+                            <h3 class="text-discord fw-bold">Interação</h3>
+                            <p class="text-white-50">Entre alunos</p>
                         </div>
                         <div class="discord-stat">
-                            <h3 class="text-discord fw-bold">15+</h3>
-                            <p class="text-white-50">Canais Ativos</p>
+                            <h3 class="text-discord fw-bold">Suporte</h3>
+                            <p class="text-white-50">Da comunidade</p>
                         </div>
                         <div class="discord-stat">
-                            <h3 class="text-discord fw-bold">24/7</h3>
-                            <p class="text-white-50">Suporte</p>
+                            <h3 class="text-discord fw-bold">Gratuito</h3>
+                            <p class="text-white-50">Para todos</p>
                         </div>
                     </div>
                     <a href="{{route('login')}}" class="btn btn-discord btn-lg px-5 animate__animated animate__fadeInUp animate__delay-4s">
-                        <i class="bi bi-discord me-2"></i>
-                        Entrar no Discord
+                        <i class="bi bi-people-fill me-2"></i>
+                        Participar da Comunidade
                     </a>
                 </div>
                 <div class="col-lg-6 animate__animated animate__fadeInRight animate__delay-4s">
                     <div class="discord-image-wrapper">
-                        <img src="/images/discord-community.webp" alt="Nossa Comunidade Discord" class="img-fluid rounded-4 shadow-lg">
+                        <img src="/images/discord-community.webp" alt="Nossa Comunidade de Estudantes" class="img-fluid rounded-4 shadow-lg">
                     </div>
                 </div>
             </div>
@@ -212,9 +246,9 @@
                         <div class="feature-icon mb-4">
                             <i class="bi bi-clock text-primary"></i>
                         </div>
-                        <h3 class="feature-title">+138 horas de conteúdo exclusivo</h3>
+                        <h3 class="feature-title">Conteúdo Organizado</h3>
                         <p class="feature-description">
-                            Tenha acesso a mais de 138 horas de conteúdo exclusivo e aprofunde seus conhecimentos.
+                            Acesse conteúdo educacional bem organizado para facilitar seu aprendizado.
                         </p>
                     </div>
                 </div>
@@ -225,9 +259,9 @@
                         <div class="feature-icon mb-4">
                             <i class="bi bi-play-circle text-primary"></i>
                         </div>
-                        <h3 class="feature-title">Novas aulas todas as semanas</h3>
+                        <h3 class="feature-title">Aulas em Vídeo</h3>
                         <p class="feature-description">
-                            Novas aulas todas as semanas, mantendo você atualizado constantemente.
+                            Assista às aulas em vídeo para um aprendizado mais dinâmico e interativo.
                         </p>
                     </div>
                 </div>
@@ -238,9 +272,9 @@
                         <div class="feature-icon mb-4">
                             <i class="bi bi-people text-primary"></i>
                         </div>
-                        <h3 class="feature-title">+1310 membros na comunidade</h3>
+                        <h3 class="feature-title">Comunidade Colaborativa</h3>
                         <p class="feature-description">
-                            Junte-se a uma comunidade de mais de 1310 membros e amplie seus horizontes.
+                            Faça parte de uma comunidade onde alunos e instrutores colaboram juntos.
                         </p>
                     </div>
                 </div>
@@ -249,47 +283,40 @@
                 <div class="col-md-4">
                     <div class="feature-card h-100">
                         <div class="feature-icon mb-4">
-                            <i class="bi bi-code-slash text-primary"></i>
+                            <i class="bi bi-laptop text-primary"></i>
                         </div>
-                        <h3 class="feature-title">Acesso aos códigos no GitHub da Academia</h3>
+                        <h3 class="feature-title">Acesso por Qualquer Dispositivo</h3>
                         <p class="feature-description">
-                            Tenha acesso a todos os códigos no GitHub da Academia para aprimorar sua aprendizagem.
+                            Estude pelo computador, tablet ou celular, com uma interface adaptada para todos os dispositivos.
                         </p>
                     </div>
                 </div>
-
+                
                 <!-- Card 5 -->
                 <div class="col-md-4">
                     <div class="feature-card h-100">
                         <div class="feature-icon mb-4">
-                            <i class="bi bi-discord text-primary"></i>
+                            <i class="bi bi-award text-primary"></i>
                         </div>
-                        <h3 class="feature-title">Servidor dedicado para alunos no Discord</h3>
+                        <h3 class="feature-title">Certificados de Conclusão</h3>
                         <p class="feature-description">
-                            Acesso a um servidor dedicado no Discord exclusivo para alunos.
+                            Ao concluir um curso, receba um certificado para comprovar seu aprendizado.
                         </p>
                     </div>
                 </div>
-
+                
                 <!-- Card 6 -->
                 <div class="col-md-4">
                     <div class="feature-card h-100">
                         <div class="feature-icon mb-4">
-                            <i class="bi bi-rocket text-primary"></i>
+                            <i class="bi bi-currency-dollar text-primary"></i>
                         </div>
-                        <h3 class="feature-title">Pronto para começar sua jornada de aprendizado?</h3>
+                        <h3 class="feature-title">100% Gratuito</h3>
                         <p class="feature-description">
-                            Torne-se um aluno agora e desbloqueie acesso exclusivo ao nosso conteúdo e comunidade!
+                            Todos os cursos e recursos são totalmente gratuitos, sem custos escondidos.
                         </p>
                     </div>
                 </div>
-            </div>
-
-            <!-- CTA -->
-            <div class="text-center mt-5">
-                <a href="{{ route('register') }}" class="btn btn-primary btn-lg px-5">
-                    SEJA UM ALUNO DA SPACESEAT
-                </a>
             </div>
         </div>
     </section>
@@ -358,29 +385,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-4" style="border-top: 1px solid rgba(255,255,255,0.03);">
+    <footer class="py-4 border-top border-dark">
         <div class="container">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-                <!-- Logo -->
-                <div>
-                    <img src="/images/logo.png" alt="Space Seat" style="width: 100px; opacity: 0.9;">
-                </div>
-
-                <!-- Links principais -->
-                <div class="d-flex gap-4">
-                    <a href="#" class="text-white-50 text-decoration-none" style="font-size: 13px; opacity: 0.7;">Cursos</a>
-                    <a href="#" class="text-white-50 text-decoration-none" style="font-size: 13px; opacity: 0.7;">Comunidade</a>
-                    <a href="#" class="text-white-50 text-decoration-none" style="font-size: 13px; opacity: 0.7;">Blog</a>
-                    <a href="https://www.instagram.com/__spaceseat/" class="text-white-50" style="font-size: 13px; opacity: 0.7;">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Copyright -->
-            <div class="text-center">
-                <span class="text-white-50" style="font-size: 12px; opacity: 0.5;">&copy; 2024 SpaceSeat</span>
-            </div>
+            <p class="text-center text-white-50 mb-0">
+                SpaceSeat - Projeto Educacional desenvolvido como TCC do Ensino Médio - 2025
+            </p>
         </div>
     </footer>
 
